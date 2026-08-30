@@ -1,0 +1,73 @@
+@use "../styles/variables" as *;
+
+.footer__container {
+  padding-top: 64px;
+  padding-bottom: 128px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+
+.footer__title {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.footer__contacts {
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  gap: 64px;
+}
+
+.footer__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer__phone,
+.footer__email {
+  font-family: $font-primary;
+  font-weight: 600;
+  font-size: 24px;
+  color: $white;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $yellow-green;
+  }
+}
+
+.footer__social {
+  display: flex;
+  gap: 16px;
+}
+
+.footer__copyright {
+  font-family: $font-primary;
+  font-weight: 400;
+  font-size: 12px;
+  color: $gray;
+  align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+  .footer__container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__contacts {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer__copyright {
+    margin-top: 8px;
+  }
+}

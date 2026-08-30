@@ -1,0 +1,253 @@
+@use "../../styles/variables" as *;
+
+
+/* Hero */
+.hero__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.hero__wrapper {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    gap: 32px;
+    margin-top: 15vh;
+}
+
+.hero__title {
+    max-width: 800px;
+    font-family: $font-secondary;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 120%;
+    color: $white;
+}
+
+.hero__separator {
+    width: 180px;
+    height: 1px;
+    background: $border-dark;
+    align-self: flex-start;
+    transform-origin: left center;
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.hero__avatar-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.hero__avatar {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 2px;
+  box-sizing: border-box;
+  background: $gradient-primary;
+}
+
+.hero__avatar-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hero__avatar-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: $yellow-green;
+}
+
+.hero__avatar-desc {
+    max-width: 250px;
+    font-size: 14px;
+    color: $gray;
+}
+
+.hero__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    object-fit: contain;
+    width: 100%;
+    background: transparent;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
+
+.hero__cta {
+    position: relative;
+    display: flex;
+    z-index: 3;
+    flex-direction: column;
+    row-gap: 24px;
+    align-items: flex-start;
+    align-self: flex-end;
+    max-width: 280px;
+}
+
+.hero__cta-desc {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.hero__сta-btn {
+    padding: 8px 24px;
+    height: 48px;
+    font-size: 20px;
+    line-height: 125%;
+}
+
+/* About */
+.about__left {
+    margin-bottom: 32px;
+}
+
+.about__greeting {
+    font-family: inherit;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: $gray;
+    max-width: 560px;
+
+    &::first-line {
+        color: $white;
+    }
+}
+
+.about__social {
+    gap: 128px; /* Расстояние между иконками */
+    padding: 64px 0 128px 0;
+    width: 100%;
+}
+
+.about__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    margin-left: auto;
+    width: fit-content;
+    margin-bottom: 64px;
+}
+
+.about__title {
+    font-family: $font-secondary;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: $yellow-green;
+}
+
+.about__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 560px;
+    font-family: inherit;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 120%;
+}
+
+.about__marquee-text {
+    font-weight: 300;
+    font-size: 64px;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    color: #3D424D;
+}
+
+.about__marquee-logo {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+
+.about__marquee-logo img {
+    height: 80px;
+    width: auto;
+}
+
+.about__marquee-logo > :last-child {
+  margin-right: 100px;
+}
+
+/* Cases */
+.cases__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.cases__title {
+    width: 100%;
+    font-family: $font-secondary;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: $yellow-green;
+}
+
+.cases__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  // 2 колонки
+  gap: 16px;
+}
+
+.cases__more-btn {
+    padding: 8px 24px;
+    width: 180px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 120%;
+}
+
+/* Feedback */
+.feedback__container {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.feedback__title {
+    font-family: $font-secondary;
+    font-size: 46px;
+    line-height: 120%;
+    color: $white;
+    margin-bottom: 32px;
+}
+
+.feedback__wrapper {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+}
+
+.feedback__description {
+    font-family: inherit;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 120%;
+    max-width: 555px;
+}

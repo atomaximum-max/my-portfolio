@@ -1,0 +1,48 @@
+@use "../styles/variables" as *;
+
+.form__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    width: 100%;
+    max-width: 650px;
+}
+
+.form {
+    display: grid;
+    grid-template-areas:
+        "name email"
+        "companyName tel"
+        "text text";
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+input,
+textarea {
+    padding: 16px;
+}
+
+.button__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    width: 100%;
+}
+
+.form__button {
+    padding: 8px 24px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 120%;
+    width: 100%;
+}
+
+.hints {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 16px;
+    color: $gray;
+}

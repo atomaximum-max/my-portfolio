@@ -1,0 +1,101 @@
+@use "../styles/variables" as *;
+
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: $bg;
+    color: $white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 40px;
+}
+
+.header__nav {
+    display: flex;
+    gap: 40px;
+    justify-content: flex-end; 
+}
+
+.header__nav a {
+    font-family: $font-primary;
+    font-weight: 400;
+    color: $white;
+    font-size: 16px;
+    line-height: 120%;
+    transition: color 0.15s ease, transform 0.12s ease;
+}
+
+.header__nav a:hover {
+    color: $yellow-green;
+    transform: translateY(-2px);
+}
+
+.header__burger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+
+    &-line {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: $white;
+        transition: all 0.3s ease;
+
+        &:nth-child(2) {
+            width: 18px;
+        }
+    }
+}
+
+.header__btn {
+    padding: 8px 24px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: $gradient-primary;
+        color: #111111;
+    }
+}
+
+@media (max-width: 768px) {
+    #header {
+        height: 50px;
+    }
+
+    .header__burger {
+        display: flex;
+    }
+
+    .header__nav {
+        display: none;
+        flex-direction: column;
+        gap: 16px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        background: $bg;
+        border-top: 1px solid $border-dark;
+    }
+
+    .header--menu-opened .header__nav {
+        display: flex;
+    }
+}
