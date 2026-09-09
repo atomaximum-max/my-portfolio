@@ -69,40 +69,17 @@ section {
 }
 
 .bottom-blur {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    z-index: 1000;
-    pointer-events: none;
-
-    /* Базовое размытие */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-
-    /* Градиентный фон для плавности */
-    background: linear-gradient(
-        to bottom,
-        rgba(17, 17, 17, 0.01) 0%,
-        rgba(17, 17, 17, 0.05) 10%,
-        rgba(17, 17, 17, 0.1) 70%,
-        rgba(17, 17, 17, 0.2) 100%
-    );
-
-    /* Маска - размытие проявляется постепенно */
-    mask-image: linear-gradient(
-        to bottom,
-        transparent 0%,
-        #111111 40%,
-        #111111 100%
-    );
-    -webkit-mask-image: linear-gradient(
-        to bottom,
-        transparent 0%,
-        #111111 40%,
-        #111111 100%
-    );
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 1000;
+  pointer-events: none;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 40%, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 40%, black 100%);
 }
 
 @media (max-width: 768px) {
