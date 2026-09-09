@@ -8,7 +8,7 @@ import { BackToTop } from "./components/ui/BackToTop"
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/my-portfolio">
       <ScrollToTop />
       <Header />
       <Routes>
