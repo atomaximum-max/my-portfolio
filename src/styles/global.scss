@@ -76,8 +76,21 @@ section {
   height: 150px;
   z-index: 1000;
   pointer-events: none;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+
+  // Сильный blur
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  // Прозрачный фон с градиентом
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(17, 17, 17, 0.1) 30%,
+    rgba(17, 17, 17, 0.4) 70%,
+    rgba(17, 17, 17, 0.7) 100%
+  );
+
+  // Маска для плавного появления
   mask-image: linear-gradient(to bottom, transparent 0%, black 40%, black 100%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 40%, black 100%);
 }
