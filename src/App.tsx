@@ -18,7 +18,9 @@ function App() {
       <Footer/>
 
       {/* Добавляем блок размытия */}
-      <div className="bottom-blur" />
+      <div className="bottom-blur">
+        
+      </div>
       <BackToTop />
     </BrowserRouter>
   )
