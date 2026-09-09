@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './socialbar.scss';
+import './SocialBar.scss';
 
 import tgIcon from '../assets/img/telegram.svg';
 import inIcon from '../assets/img/linkedin.svg';

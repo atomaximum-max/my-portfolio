@@ -52,9 +52,37 @@
   &--primary {
     background: $gradient-primary;
     color: #111111;
+    overflow: hidden;
 
-    &:hover:not(:disabled) {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.6), // ← увеличил прозрачность
+          transparent
+      );
+      transform: skewX(-25deg); // ← наклон для эффекта "волны"
+      animation: none;
+    }
+
+    &:hover:not(:disabled)::before {
+      animation: shimmer 0.9s ease-in-out forwards;
       transform: scale(1.02);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 200%; // ← уходит дальше, чтобы волна была длиннее
     }
   }
 

@@ -1,8 +1,9 @@
 //Основные цвета
 $bg: #111111;
+$plashka: #212121;
 $white: #ffffff;
 $yellow-green: #2AFB62;
-$border-dark: #303030;
+$border-dark: #282828;
 $gray: #768199;
 
 //Градиенты
@@ -11,3 +12,8 @@ $gradient-primary: linear-gradient(315deg, #57ebde 0%, #aefb2a 100%);
 //Шрифты
 $font-primary: "Open Sans", "Arial", sans-serif;
 $font-secondary: "RussoOne", "Arial", sans-serif;
+
+// Отступы
+$gap-sm: 8px;
+$gap-md: 16px;
+$gap-lg: 32px;

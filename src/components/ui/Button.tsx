@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import './button.scss';
+import './Button.scss';
 
 interface ButtonProps {
   children: React.ReactNode; // Текст внутри кнопки (обязательный)

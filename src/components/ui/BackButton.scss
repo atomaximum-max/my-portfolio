@@ -1,0 +1,15 @@
+@use '../../styles/variables' as *;
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+
+    &__path {
+        fill: $gray;
+        transition: fill 0.3s ease;
+    }
+
+    &:hover &__path {
+        fill: $yellow-green;
+    }
+}

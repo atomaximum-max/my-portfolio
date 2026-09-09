@@ -1,22 +1,20 @@
 @use "../../styles/variables" as *;
 
-
 /* Hero */
 .hero__container {
     position: relative;
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    justify-content: space-between;
+    min-height: 600px;
 }
 
 .hero__wrapper {
     position: relative;
+    top: 150px;
     z-index: 3;
     display: flex;
     flex-direction: column;
-    align-self: flex-start;
     gap: 32px;
-    margin-top: 15vh;
 }
 
 .hero__title {
@@ -73,23 +71,43 @@
 }
 
 .hero__img {
+    position: absolute;    
+    inset: 0;
+    z-index: 1;
+    opacity: 0.7;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.hero__spline {
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+}
+
+/*.hero__img {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 2;
-    object-fit: contain;
     width: 100%;
+    height: 100%;
     background: transparent;
+    transform: translate(-50%, -50%);
     opacity: 0.7;
+    overflow: visible;
     transition: opacity 0.3s ease, transform 0.3s ease;
 
     &:hover {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1.05);
-    }
+    }    
 }
-
+*/
 .hero__cta {
     position: relative;
     display: flex;
@@ -98,6 +116,7 @@
     row-gap: 24px;
     align-items: flex-start;
     align-self: flex-end;
+    top: -60px;
     max-width: 280px;
 }
 
@@ -188,7 +207,7 @@
 }
 
 .about__marquee-logo > :last-child {
-  margin-right: 100px;
+  margin-right: 60px;
 }
 
 /* Cases */
@@ -250,4 +269,245 @@
     font-size: 24px;
     line-height: 120%;
     max-width: 555px;
+}
+
+@media (max-width: 1280px) {
+    .hero__title {
+        max-width: 600px;
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero__title {
+        font-size: 36px;
+        max-width: 525px;
+    }
+
+    .hero__spline {
+        top: 35%;
+        left: 67%;
+    }
+
+    .hero__cta {
+        max-width: 220px;
+    }
+
+    .hero__cta-desc {
+        font-size: 18px;
+        line-height: 22px;    
+    }
+
+    .about__greeting {
+        font-size: 24px;
+        max-width: 420px;
+    }
+
+    .about__title,
+    .experience__title,
+    .cases__title {
+        font-size: 18px;
+    }
+
+    .about__desc {
+        font-size: 18px;
+        max-width: 420px;
+    }
+
+    .about__marquee-text {
+        font-size: 48px;
+    }
+
+    .about__social {
+        gap: 64px;
+        padding-top: 0;
+        padding-bottom: 64px;
+    }
+
+    .about__marquee-logo {
+        gap: 60px;
+    }
+
+    .about__marquee-logo img{
+        height: 60px;   
+    }
+
+    .cases__container {
+        padding-bottom: 32px;
+    }
+
+    .feedback__container {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    .feedback__title {
+        font-size: 32px;
+    }
+
+    .feedback__description {
+        font-size: 18px;
+        max-width: 420px;
+    }
+}
+
+@media (max-width: 768px) {  
+    .hero__container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .hero__title {
+        max-width: 400px;
+        font-size: 32px;
+    }
+
+    .hero__avatar-card {
+        gap: 8px;
+    }
+
+    .hero__avatar {
+        width: 64px;
+        height: 64px;
+
+        &-name {
+            font-size: 14px;
+        }
+
+        &-desc {
+            font-size: 12px;
+        }
+    }
+
+    .hero__spline {
+        top: 30%;
+        left: 65%;
+    }
+
+    .hero__cta {
+        align-self: center;
+        top: -64px;
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero__сta-btn {
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .about__right {
+        gap: 16px;
+    }
+
+    .about__desc {
+        max-width: 100%;
+    }
+
+    .experience__title {
+        margin-bottom: 16px;
+    }
+
+    .cases__container {
+        gap: 16px;
+    }
+
+    .cases__more-btn {
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .feedback__title {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .feedback__wrapper {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .feedback__description {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero__wrapper {
+        gap: 16px;
+    }
+
+    .cases__grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__container {
+        justify-content: flex-start;
+        row-gap: 300px;
+        min-height: 450px;
+    }
+
+    .hero__title {
+        font-size: 28px;
+        width: 100%;
+    }
+
+    .hero__separator {
+        width: 120px;
+    }
+
+    .hero__spline {
+        top: 25%;
+        left: 60%;
+    }
+
+    .hero__cta {
+        top: -70px;
+    }
+
+    .hero__cta-desc {
+        text-align: center;
+        font-size: 16px;
+        line-height: 20px;
+        width: 100%;
+    }
+
+    .about__greeting {
+        font-size: 18px;
+        max-width: 320px;
+    }
+
+    .about__title,
+    .experience__title,
+    .cases__title {
+        font-size: 16px;
+    }
+
+    .about__desc {
+        font-size: 16px;
+    }
+
+    .about__marquee-text {
+        font-size: 32px;
+    }
+
+    .about__social {
+        gap: 32px;
+    }
+
+    .about__marquee-logo img{
+        height: 48px;   
+    }
+
+    .feedback__title {
+        font-size: 20px;
+    }
+
+    .feedback__description {
+        font-size: 16px;
+    }
 }

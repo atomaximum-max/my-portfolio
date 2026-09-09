@@ -50,6 +50,8 @@ ol {
 button {
     font-family: inherit;
     border: none;
+    background: transparent;
+    padding: 0;
     cursor: pointer;
 }
 
@@ -101,4 +103,18 @@ section {
         #111111 40%,
         #111111 100%
     );
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }

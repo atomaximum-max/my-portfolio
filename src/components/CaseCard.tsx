@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './casecard.scss';
+import './CaseCard.scss';
 
 interface CaseCardProps {
   year: string;

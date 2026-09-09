@@ -1,9 +1,12 @@
-import { lazy, Suspense, useState } from "react";
-import Marquee from "../../components/Marquee";
+import { useState } from "react";
+import { ScrollMarquee } from "../../components/ScrollMarquee";
 import Experience from "../../components/Experience";
 import { SocialBar } from "../../components/SocialBar";
 import CaseCard from "../../components/CaseCard";
 import Form from "../../components/Form";
+import { Button } from "../../components/ui/Button";
+import { casesData } from "../../data/cases";
+import HeroSpline from "../../components/HeroSpline";
 
 import avatarImage from "../../assets/img/profile.jpeg";
 import figmaLogo from '../../assets/img/figma.svg';
@@ -20,18 +23,11 @@ import gitIcon from "../../assets/img/git.svg";
 import projectIcon from "../../assets/img/project.svg";
 import jiraIcon from "../../assets/img/jira.svg";
 import confluenceIcon from "../../assets/img/confluence.svg";
-import collectaImage from '../../assets/img/Collecta.jpg';
-import proxwayImage from '../../assets/img/ProxWay.jpg';
-import velobikeImage from '../../assets/img/Velobike.jpg';
-import transneftImage from '../../assets/img/Transneft.jpg';
 
-import "./homepage.scss";
-import { Button } from "../../components/ui/Button";
-
-
-const Spline = lazy(async () => import("@splinetool/react-spline"));
+import "./HomePage.scss";
 
 export default function HomePage() {
+    // ← СОСТОЯНИЕ ДЛЯ КНОПКИ "ЕЩЁ КЕЙСЫ"
     const [showMoreCases, setShowMoreCases] = useState(false);
     const toggleCases = () => setShowMoreCases(!showMoreCases);
 
@@ -52,11 +48,7 @@ export default function HomePage() {
                         </div>
                     </div>
                 </div>
-                <Suspense>
-                    <div className="hero__img">
-                        <Spline scene="https://prod.spline.design/Cj8FMriGEZCTOr2n/scene.splinecode" />
-                    </div>
-                </Suspense>
+                <HeroSpline />
                 <div className="hero__cta">
                     <p className="hero__cta-desc">
                         От идеи до интерфейса, готового&nbsp;к&nbsp;запуску
@@ -92,11 +84,14 @@ export default function HomePage() {
                         </p>
                     </div>
                 </div>
-                <Marquee speed={20}>
+                <ScrollMarquee 
+                    speed={150}
+                    mobileSpeed={60}
+                >
                     <span className="about__marquee-text">
-                        Превращаю сложные задачи в понятные интерфейсы &nbsp;&nbsp; ✦ &nbsp;&nbsp; Превращаю сложные задачи в понятные интерфейсы &nbsp;&nbsp; ✦ &nbsp;&nbsp;
+                        Превращаю сложные задачи в понятные интерфейсы&nbsp;&nbsp; ✦
                     </span>
-                </Marquee>
+                </ScrollMarquee>
                 <Experience />
                 <SocialBar className="about__social"/>
                 <div className="about__left">
@@ -118,7 +113,10 @@ export default function HomePage() {
                         </p>
                     </div>
                 </div>
-                <Marquee speed={30}>
+                <ScrollMarquee 
+                    speed={100}
+                    mobileSpeed={60}
+                >
                     <div className="about__marquee-logo">
                         <img src={figmaLogo} alt="Figma logo" />
                         <img src={photoshopIcon} alt="Photoshop logo" />
@@ -135,42 +133,25 @@ export default function HomePage() {
                         <img src={jiraIcon} alt="Jira logo" />
                         <img src={confluenceIcon} alt="Confluence logo" />
                     </div>
-                </Marquee>
+                </ScrollMarquee>
             </div>
         </section>
 
         <section id="cases">
             <div className="container cases__container">
                 <h2 className="cases__title">Кейсы</h2>
+                {/* ← СПИСОК КЕЙСОВ ИЗ МАССИВА */}
                 <div className="cases__grid">
-                    <CaseCard 
-                        year="2026"
-                        title="Платформа аналитики «Collecta»"
-                        description="Разработка пользовательского интерфейса платформы для сбора, обработки, анализа и&nbsp;автоматизации работы с&nbsp;большими объёмами данных"
-                        image={collectaImage}
-                        link="/case/collecta"
-                    />
-                    <CaseCard
-                        year="2025-2026"
-                        title="СКУД для ГК «Эликс»"
-                        description="Редизайн пользовательского интерфейса системы контроля и&nbsp;управления доступом на объектах с&nbsp;поддержкой систем биометрии и&nbsp;видеонаблюдения"
-                        image={proxwayImage}
-                        link="/case/proxway"
-                    />
-                    <CaseCard
-                        year="2024-2025"
-                        title="IoT-платформа «Велобайк»"
-                        description="Разработка отечественной IoT-платформы управления городским прокатом мобильного транспорта для компании Велобайк (АО Ситибайк)"
-                        image={velobikeImage}
-                        link="/case/velobike"
-                    />
-                    <CaseCard
-                        year="2022-2024"
-                        title="КИС ЛКК для ПАО «Транснефть»"
-                        description="Проектирование корпоративной информационной системы личного кабинета контрагента для обеспечения взаимодействия с&nbsp;учётными сервисами"
-                        image={transneftImage}
-                        link="/case/transneft"
-                    />      
+                    {casesData.slice(0, showMoreCases ? casesData.length : 4).map((caseItem) => (
+                        <CaseCard
+                            key={caseItem.id}
+                            year={caseItem.year}
+                            title={caseItem.title}
+                            description={caseItem.description}
+                            image={caseItem.image}
+                            link={caseItem.link}
+                        />
+                    ))}     
                 </div>
                 <Button
                     variant="primary"

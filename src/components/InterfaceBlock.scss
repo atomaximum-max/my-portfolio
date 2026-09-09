@@ -1,0 +1,37 @@
+@use "../styles/variables" as *;
+
+.interface__block-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.interface__block-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.interface__block-number {
+    font-family: $font-primary;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 120%;
+    color: $yellow-green;
+}
+
+.interface__block-title {
+    font-family: $font-primary;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 120%;
+    color: $yellow-green; 
+}
+
+.interface__block-subtitle {
+    font-family: $font-primary;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
+    color: $gray;
+}

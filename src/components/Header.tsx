@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import { useScrollCheck } from '../hooks/useScrollCheck';
-
-import "./header.scss";
 import { Button } from './ui/Button';
 
-
+import "./Header.scss";
 
 export default function Header() {
   // 1. Подключаем хук для отслеживания скролла
@@ -32,36 +30,37 @@ export default function Header() {
       <div className="container header__container">
         {/* Навигация */}
         <nav className="header__nav">
-          <a href="#about" onClick={closeMenu}>О себе</a>
-          <a href="#cases" onClick={closeMenu}>Кейсы</a>
-          <a href="#footer" onClick={closeMenu}>Контакты</a>
+          <div className="header__links">
+            <a className="header__nav-link" href="#about" onClick={closeMenu}>О себе</a>
+            <a className="header__nav-link" href="#cases" onClick={closeMenu}>Кейсы</a>
+            <a className="header__nav-link" href="#footer" onClick={closeMenu}>Контакты</a>
+          </div>
+
+          {showButton && (
+            <Button
+              variant="outline"
+              href="https://t.me/atomaximum"
+              target="_blank"
+              hoverText="Telegram"
+              isHoverable
+              className="header__btn"
+            >
+              Написать мне
+            </Button>
+          )}
         </nav>
 
         {/* Бургер-кнопка для мобилок */}
-        <button 
-          className="header__burger" 
+        <button
+          type='button'
+          className={`header__burger ${isMobileMenuOpened ? 'header__burger--active' : ''}`}
           onClick={toggleMenu}
           aria-expanded={isMobileMenuOpened}
-          aria-label="Меню"
+          aria-label={isMobileMenuOpened ? 'Закрыть меню' : 'Открыть меню'}
         >
           <span className="header__burger-line" />
           <span className="header__burger-line" />
-          <span className="header__burger-line" />
         </button>
-
-        {/* Кнопка "Написать мне" */}
-        {showButton && (
-          <Button
-            variant="outline"
-            href="https://t.me/atomaximum"
-            target="_blank"
-            hoverText="Telegram"
-            isHoverable
-            className="header__btn"
-          >
-            Написать мне
-          </Button>
-        )}
       </div>
     </header>
   );

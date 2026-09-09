@@ -6,7 +6,7 @@ import { Input } from './ui/Input';
 import { Textarea } from './ui/Textarea';
 import { Button } from './ui/Button';
 
-import './form.scss';
+import './Form.scss';
 
 type FormInputs = {
   name: string;
@@ -106,15 +106,6 @@ const Form: React.FC<FormProps> = ({ formClassName, isModal }) => {
 
         <Input
           className="form__input"
-          placeholder="Название компании"
-          gridArea="companyName"
-          id="form-company"
-          errorMessage={errors.companyName?.message}
-          {...register('companyName')}
-        />
-
-        <Input
-          className="form__input"
           placeholder="Номер телефона*"
           gridArea="tel"
           id="form-tel"
@@ -123,6 +114,15 @@ const Form: React.FC<FormProps> = ({ formClassName, isModal }) => {
             required: 'Поле обязательно к заполнению',
             pattern: { value: PHONE_REGEXP, message: 'Введите в формате +7 (123) 456-78-99' },
           })}
+        />
+
+        <Input
+          className="form__input"
+          placeholder="Название компании"
+          gridArea="companyName"
+          id="form-company"
+          errorMessage={errors.companyName?.message}
+          {...register('companyName')}
         />
 
         <Textarea

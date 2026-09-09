@@ -1,0 +1,398 @@
+@use "../../../styles/variables" as *;
+
+/* Hero */
+.collecta__hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding-top: 32px;
+    padding-bottom: 64px;
+}
+
+.collecta__top-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.collecta__title {
+    max-width: 585px;
+    font-family: $font-secondary;
+    font-size: 46px;
+    line-height: 120%;
+    color: $white;
+}
+
+.collecta__uppercase-text {
+    max-width: 585px;
+    font-family: $font-primary;
+    font-size: 32px;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: $gray;
+
+    &::first-line {
+        color: $white;
+    }
+}
+
+.collecta__info {
+    display: grid;
+    grid-template-columns: auto auto auto auto; // все по ширине контента
+    justify-content: space-between; // растягиваем по всей ширине
+    gap: 32px;
+    padding: 32px 0;
+    border-top: 1px solid $border-dark;
+    border-bottom: 1px solid $border-dark;
+}
+
+.collecta__info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.collecta__info-label {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: $gray;
+}
+
+.collecta__info-value {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    color: $white;  
+}
+
+.collecta__thumbnail,
+.collecta__problem-scheme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 685px;
+    padding: 64px;
+    background-color: $plashka;
+    border-radius: 16px;
+}
+
+.collecta__thumbnail-img {
+    width: 100%;          // ← занимает всю ширину родителя
+    max-width: 800px;      // ← но не больше 800px
+    height: auto;          // ← сохраняет пропорции
+    display: block;
+}
+
+/* Problem | Research | Solution */
+.collecta__problem-container,
+.collecta__research-container {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding-bottom: 64px;
+}
+
+.collecta__problem-content,
+.collecta__research-content,
+.collecta__solution-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 64px;
+}
+
+.collecta__problem-title,
+.collecta__research-title,
+.collecta__solution-title {
+    max-width: 585px;
+    font-family: $font-secondary;
+    font-size: 32px;
+    line-height: 120%;
+    color: $white;
+}
+
+.collecta__problem-wrapper,
+.collecta__research-wrapper,
+.collecta__solution-wrapper {
+    max-width: 585px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.collecta__problem-desc,
+.collecta__research-desc,
+.collecta__solution-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.collecta__problem-text,
+.collecta__research-text,
+.collecta__solution-text {
+    font-family: inherit;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 120%;
+}
+
+.collecta__problem-goals,
+.collecta__problem-role,
+.collecta__research-summary,
+.collecta__solution-result {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.collecta__problem-goal-title,
+.collecta__problem-role-title,
+.collecta__research-summary-title,
+.collecta__solution-result-title {
+    font-family: $font-secondary;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: $yellow-green;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $border-dark;
+}
+
+.collecta__problem-goal-text,
+.collecta__problem-role-text,
+.collecta__research-summary-item,
+.collecta__solution-result-text {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: $white;
+}
+
+.collecta__problem-img {
+    width: 100%;          // ← занимает всю ширину родителя
+    height: auto;          // ← сохраняет пропорции
+    display: block;
+}
+
+.collecta__research-summary-list {
+    list-style: disc;
+    padding-left: 20px;
+     display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Table */
+.collecta__research-table {
+    width: 100%;
+    background-color: $plashka;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 32px;
+}
+
+.research__table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 32px;
+
+    // Стили для заголовков
+    .research__table-th {
+        padding: 24px 0;
+        text-align: left;
+        border-bottom: 1px solid $border-dark;
+        vertical-align: middle;
+        box-sizing: border-box;
+        width: 12%;
+
+        &:last-child {
+            background-color: rgba($yellow-green, 0.05); // Легкий фон (10% непрозрачности)
+            border-top: 1px solid $yellow-green;
+            border-right: 1px solid $yellow-green;
+            border-left: 1px solid $yellow-green;
+            border-radius: 16px 16px 0 0;
+        }
+    }
+
+    .research__table-th--feature {
+        width: auto;
+    }
+
+    .research__table-th-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+    }
+
+    // Логотип
+    .research__table-logo {
+        height: 24px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    // Название
+    .research__table-name {
+        font-family: $font-primary;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 120%;
+        color: $white;
+    }
+
+    // Стили для ячеек тела
+    .research__table-td {
+        padding: 24px 0;
+        text-align: left;
+        vertical-align: middle;
+        border-bottom: 1px solid $border-dark;
+
+        &:last-child {
+            background-color: rgba($yellow-green, 0.05); // Легкий фон (10% непрозрачности)
+            border-right: 1px solid $yellow-green;
+            border-left: 1px solid $yellow-green;
+            border-radius: 0;
+        }
+    }
+
+    // Первая колонка - названия функций
+    .research__table-td--feature {
+        font-family: $font-primary;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        color: $white;
+        text-align: left;
+        width: auto;
+    }
+
+    .research__table-td--status{
+       text-align: center;
+       vertical-align: middle;
+       width: 12%;
+    }
+
+        .research__table-icon {
+        display: inline-block;
+    }
+
+       // Стили для Последней ячейки
+    tbody tr:last-child td:last-child {
+        border-bottom: 1px solid $yellow-green; // ← Gradница
+        border-radius: 0 0 16px 16px; // ← Скругление
+    }
+}
+
+.research__legend {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+}
+
+.research__legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: $white;
+}
+
+.collecta__solution-container {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+
+/* Interfaces */
+.interface__block {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background: $plashka;
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.interface__block-content {
+    display: flex;
+    gap: $gap-md;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    .interface__block-image {
+       width: 100%;
+       height: auto;
+       object-fit: contain;
+       display: block;
+       flex-shrink: 0;
+       border-radius: 8px;
+    }
+
+    // 1 картинка
+    .interface__block-image:only-child {
+        max-width: 100%;
+    }
+
+    // 2 картинки
+    .interface__block-image:first-child:nth-last-child(2),
+    .interface__block-image:first-child:nth-last-child(2) ~ .interface__block-image {
+        max-width: calc(50% - $gap-md / 2);
+    }
+
+    // 4 картинки
+    .interface__block-image:first-child:nth-last-child(4),
+    .interface__block-image:first-child:nth-last-child(4) ~ .interface__block-image {
+        max-width: calc(50% - $gap-md / 2);
+    }
+}
+
+.interface__block-content--03 {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+
+    .interface__block-image {
+        width: 70%; // Все картинки крупные
+        height: auto;
+        border-radius: 8px;
+        flex-shrink: 0; // Запрещаем сжиматься
+
+        // 1-я картинка (верхняя левая)
+        &:nth-child(1) {
+            position: relative;
+            z-index: 1;
+        }
+
+        // 2-я картинка (наезжает на 1-ю, уходит вниз)
+        &:nth-child(2) {
+            margin-left: -55%; // Наезд влево
+            margin-top: 160px;  // Сдвиг вниз
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        // 3-я картинка (наезжает на 2-ю, уходит еще ниже)
+        &:nth-child(3) {
+            margin-left: -55%; // Наезд влево
+            margin-top: 320px; // Самый большой сдвиг вниз
+            position: relative;
+            z-index: 3;
+        }
+    }
+}

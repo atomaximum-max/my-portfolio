@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './experience.scss';
+import './Experience.scss';
 
 const experienceData = [
     {

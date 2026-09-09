@@ -1,9 +1,10 @@
 import React from 'react';
+import { SocialBar } from './SocialBar';
 
 import titleSvg from '../assets/img/title.svg';
 
-import './footer.scss';
-import { SocialBar } from './SocialBar';
+import './Footer.scss';
+
 
 const Footer: React.FC = () => {
   return (

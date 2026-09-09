@@ -55,19 +55,50 @@
   align-self: flex-start;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .footer__container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    padding-top: 32px;
+  }
+
+  .footer__phone, .footer__email {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer__copyright {
+    margin-top: 8px;
   }
 
   .footer__contacts {
-    flex-direction: column;
-    gap: 12px;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__container {
+    gap: 32px;
+    padding-bottom: 120px;
   }
 
-  .footer__copyright {
-    margin-top: 8px;
+  .footer__contacts {
+    flex-direction: column-reverse;
+    align-self: center;
+  }
+
+  .footer__wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+
+  }
+
+  .footer__phone,
+  .footer__email {
+    font-size: 16px;
+  }
+
+  .footer__social {
+    gap: 32px;
   }
 }

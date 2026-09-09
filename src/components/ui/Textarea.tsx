@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import type { TextareaHTMLAttributes } from 'react';
 
-import './textarea.scss';
+import './Textarea.scss';
 
 interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   className?: string;

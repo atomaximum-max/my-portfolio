@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import type { InputHTMLAttributes } from "react";
 
-import "./input.scss";
+import "./Input.scss";
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;

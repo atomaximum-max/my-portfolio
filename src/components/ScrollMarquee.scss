@@ -1,0 +1,74 @@
+.scroll-marquee-wrapper {
+    overflow: hidden;
+    width: 100%;
+    background: transparent;
+    position: relative; // обязательно для псевдоэлементов
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    // Левое затемнение
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 160px;      // ширина затемнения
+        height: 100%;
+        z-index: 2;
+        background: linear-gradient(to right, #111111, transparent);
+        pointer-events: none; // чтобы не мешать кликам
+    }
+
+    // Правое затемнение
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 160px;
+        height: 100%;
+        z-index: 2;
+        background: linear-gradient(to left, #111111, transparent);
+        pointer-events: none;
+    }
+}
+
+.scroll-marquee-track {
+    display: flex;
+    white-space: nowrap;
+    width: max-content;
+    will-change: transform;
+
+    > * {
+        flex-shrink: 0;
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .scroll-marquee-wrapper {
+        padding-top: 16px;
+        padding-bottom: 16px;
+
+        &::before,
+        &::after {
+            width: 120px; // уменьшаем ширину затемнения на мобильных устройствах
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-marquee-wrapper {
+        padding-top: 8px;
+        padding-bottom: 8px;
+
+        &::before,
+        &::after {
+            width: 80px; // уменьшаем ширину затемнения на мобильных устройствах
+        }
+    }
+
+    .scroll-marquee-track > * {
+        padding-right: 20px; // уменьшаем отступ между элементами на мобильных устройствах
+    }
+}

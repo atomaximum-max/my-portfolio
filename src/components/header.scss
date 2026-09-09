@@ -9,6 +9,10 @@
     height: 60px;
     display: flex;
     align-items: center;
+
+    &.header--menu-opened {
+        background: $plashka;
+    }
 }
 
 .header__container {
@@ -21,44 +25,29 @@
 
 .header__nav {
     display: flex;
+    align-items: center;
     gap: 40px;
-    justify-content: flex-end; 
-}
-
-.header__nav a {
-    font-family: $font-primary;
-    font-weight: 400;
-    color: $white;
-    font-size: 16px;
-    line-height: 120%;
-    transition: color 0.15s ease, transform 0.12s ease;
-}
-
-.header__nav a:hover {
-    color: $yellow-green;
-    transform: translateY(-2px);
-}
-
-.header__burger {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-
-    &-line {
-        display: block;
-        width: 24px;
-        height: 2px;
-        background: $white;
-        transition: all 0.3s ease;
-
-        &:nth-child(2) {
-            width: 18px;
-        }
+    justify-content: flex-end;
+    
+    &-link {
+        font-family: $font-primary;
+        font-weight: 400;
+        color: $white;
+        font-size: 16px;
+        line-height: 120%;
+        transition: color 0.15s ease, transform 0.12s ease;
     }
+    
+    &-link:hover {
+        color: $yellow-green;
+        transform: translateY(-2px);
+    }
+}
+
+.header__links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
 .header__btn {
@@ -69,30 +58,76 @@
 
     &:hover {
         background: $gradient-primary;
-        color: #111111;
+        color: $bg;
+        transform: none;
     }
+}
+
+.header__burger {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    overflow: hidden;
+
+    &-line {
+        display: block;
+        width: 24px;
+        height: 1px;
+        flex-shrink: 0;
+        background: $white;
+        transition: transform 0.3s ease;
+    }
+}
+
+.header__burger--active .header__burger-line:nth-child(1) {
+    transform: translateY(2px) rotate(45deg);
+}
+
+.header__burger--active .header__burger-line:nth-child(2) {
+    transform: translateY(-2px) rotate(-45deg);
 }
 
 @media (max-width: 768px) {
     #header {
-        height: 50px;
+        height: 56px;
     }
 
     .header__burger {
         display: flex;
+        margin-left: auto;
     }
 
     .header__nav {
         display: none;
         flex-direction: column;
-        gap: 16px;
+        align-items: stretch;
         position: absolute;
+        gap: 24px;
         top: 100%;
         left: 0;
         right: 0;
-        padding: 20px;
-        background: $bg;
+        padding: 24px 32px;
+        background: $plashka;
         border-top: 1px solid $border-dark;
+    }
+
+    .header__links {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid $border-dark;
+    }
+
+    .header__nav .header__btn {
+        display: flex;
+        align-self: flex-start;
+        justify-content: center;
     }
 
     .header--menu-opened .header__nav {
