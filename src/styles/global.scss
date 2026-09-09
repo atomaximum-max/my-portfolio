@@ -79,16 +79,7 @@ section {
 
     /* Базовое размытие */
     backdrop-filter: blur(15px);
-    //-webkit-backdrop-filter: blur(15px);
 
-    /* Градиентный фон для плавности */
-    background: linear-gradient(
-        to bottom,
-        rgba(17, 17, 17, 0.01) 0%,
-        rgba(17, 17, 17, 0.05) 10%,
-        rgba(17, 17, 17, 0.1) 70%,
-        rgba(17, 17, 17, 0.2) 100%
-    );
 
     /* Маска - размытие проявляется постепенно */
     mask-image: linear-gradient(
