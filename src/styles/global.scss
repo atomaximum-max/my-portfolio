@@ -63,7 +63,6 @@ button {
     padding-right: 55px;
 }
 
-/* Убедитесь, что закреплённые разделы видны под фиксированным заголовком */
 section { 
     scroll-margin-top: 80px; 
 }
@@ -94,6 +93,19 @@ section {
         #111111 40%,
         #111111 100%
     );
+}
+
+:root {
+    --toastify-color-dark: #{$plashka} !important;
+    --toastify-color-success: #{$yellow-green} !important;
+    --toastify-text-color-dark: #{$white} !important;
+    --toastify-toast-bd-radius: 8px !important;
+    --toastify-font-family: #{$font-primary} !important;
+}
+
+.Toastify__toast {
+    border: 1px solid $border-light;
+    font-family: $font-primary;
 }
 
 @media (max-width: 768px) {

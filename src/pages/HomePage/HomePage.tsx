@@ -30,6 +30,11 @@ export default function HomePage() {
     // ← СОСТОЯНИЕ ДЛЯ КНОПКИ "ЕЩЁ КЕЙСЫ"
     const [showMoreCases, setShowMoreCases] = useState(false);
     const toggleCases = () => setShowMoreCases(!showMoreCases);
+    
+    // ← СОСТОЯНИЕ ДЛЯ МОДАЛЬНОГО ОКНА
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
 
   return (
     <main>
@@ -54,6 +59,7 @@ export default function HomePage() {
                         От идеи до интерфейса, готового&nbsp;к&nbsp;запуску
                     </p>
                     <Button
+                        onClick={openModal}
                         variant={"primary"}
                         className={'hero__сta-btn'}
                     >
@@ -177,6 +183,28 @@ export default function HomePage() {
 
             </div>            
         </section>
+
+        {/* ← МОДАЛЬНОЕ ОКНО */}
+        {isModalOpen && (
+            <div className="modal modal__form" onClick={closeModal}>
+                <div className="modal__content" onClick={(e) => e.stopPropagation()}>
+                    <button
+                        className="modal__close-btn"
+                        onClick={closeModal}
+                        aria-label="Закрыть"
+                    >
+                        ✕
+                    </button>
+                    <div className="modal__wrapper">
+                        <h2 className="modal__title">Хотите обсудить проект?</h2>
+                        <p className="modal__description">
+                            Оставьте свое сообщение, и я оперативно свяжусь с вами, чтобы уточнить детали
+                        </p>
+                    </div>
+                    <Form isModal formClassName="moadal__form-feedback" />
+                </div>
+            </div>
+        )}
     </main>
   )
 }

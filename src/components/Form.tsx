@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import type { SyntheticEvent } from 'react';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { toast } from 'react-toastify';
@@ -17,11 +18,10 @@ type FormInputs = {
 };
 
 const EMAIL_REGEXP = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PHONE_REGEXP = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
+const PHONE_REGEXP = /^\+?[\d\s\-()]{10,20}$/;
 
 interface FormProps {
   formClassName?: string;
-  buttonClassName?: string;
   isModal?: boolean;
 }
 
@@ -38,33 +38,29 @@ const Form: React.FC<FormProps> = ({ formClassName, isModal }) => {
   });
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
-    const { tel, ...restData } = data;
-
-    const dataToServer = {
-      tel: tel.replace(/\D/g, ''),
-      ...restData,
-    };
-
     setIsLoading(true);
 
-    try {
-      const response = await fetch('https://your-api.com/send-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dataToServer),
-      });
+    const templateParams = {
+      name: data.name,
+      email: data.email,
+      companyName: data.companyName || '',
+      tel: data.tel.replace(/\D/g, ''),
+      text: data.text || '',
+    };
 
-      if (response.ok) {
-        toast.success('Заявка успешно отправлена!');
-        reset();
-      } else {
-        throw new Error('Ошибка сервера');
-      }
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      toast.success('Сообщение успешно отправлено!');
+      reset();
     } catch (error) {
       toast.error('Произошла ошибка при отправке. Попробуйте позже.');
-      console.error('Form error:', error);
+      console.error('EmailJS error:', error);
     } finally {
       setIsLoading(false);
     }
@@ -112,7 +108,7 @@ const Form: React.FC<FormProps> = ({ formClassName, isModal }) => {
           errorMessage={errors.tel?.message}
           {...register('tel', {
             required: 'Поле обязательно к заполнению',
-            pattern: { value: PHONE_REGEXP, message: 'Введите в формате +7 (123) 456-78-99' },
+            pattern: { value: PHONE_REGEXP, message: 'Введите корректный номер телефона' },
           })}
         />
 
@@ -128,24 +124,24 @@ const Form: React.FC<FormProps> = ({ formClassName, isModal }) => {
         <Textarea
           className="form__input"
           gridArea="text"
-          placeholder="Задайте ваш вопрос"
+          placeholder="Ваше сообщение..."
           id="form-text"
           errorMessage={errors.text?.message}
           {...register('text')}
         />
+
+        <div className={`button__wrapper ${isModal ? 'button__wrapper--modal' : ''}`}>
+          <Button
+            type="submit"
+            variant="primary"
+            className="form__button"
+            disabled={isLoading}
+          >
+            {isLoading ? 'Отправляем...' : 'Отправить'}
+          </Button>
+      </div>
       </form>
-
-      <div className={`button__wrapper ${isModal ? 'button__wrapper--modal' : ''}`}>
-        <Button
-          type="submit"
-          variant="primary"
-          className="form__button"
-          disabled={isLoading}
-        >
-          {isLoading ? 'Отправляем...' : 'Отправить'}
-        </Button>
-
-        <div className="hints">
+      <div className="hints">
           <p>*Поля обязательны к заполнению</p>
           <p>
             **Нажимая на кнопку «Оставить заявку» вы подтверждаете согласие на обработку
@@ -153,7 +149,6 @@ const Form: React.FC<FormProps> = ({ formClassName, isModal }) => {
             № 152-ФЗ «О персональных данных»
           </p>
         </div>
-      </div>
     </div>
   );
 };

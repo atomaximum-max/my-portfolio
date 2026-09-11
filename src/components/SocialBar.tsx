@@ -13,10 +13,10 @@ interface SocialBarProps {
 
 export const SocialBar: React.FC<SocialBarProps> = ({ className = '' }) => {
   const socials = [
-    { id: 'tg', href: '#', img: tgIcon, alt: 'Telegram' },
-    { id: 'in', href: '#', img: inIcon, alt: 'LinkedIn' },
-    { id: 'be', href: '#', img: beIcon, alt: 'Behance' },
-    { id: 'gh', href: '#', img: ghIcon, alt: 'GitHub' },
+    { id: 'tg', href: 'https://t.me/atomaximum', img: tgIcon, alt: 'Telegram' },
+    { id: 'in', href: 'https://www.linkedin.com/in/maksim-barmanov', img: inIcon, alt: 'LinkedIn' },
+    { id: 'be', href: 'https://www.behance.net/atomaximum', img: beIcon, alt: 'Behance' },
+    { id: 'gh', href: 'https://github.com/atomaximum-max', img: ghIcon, alt: 'GitHub' },
   ];
 
   return (

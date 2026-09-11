@@ -3,7 +3,7 @@
 .form__wrapper {
     display: flex;
     flex-direction: column;
-    row-gap: 32px;
+    row-gap: 16px;
     width: 100%;
     max-width: 650px;
 }
@@ -13,7 +13,8 @@
     grid-template-areas:
         "name email"
         "companyName tel"
-        "text text";
+        "text text"
+        "button button";
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
 }
@@ -24,6 +25,7 @@ textarea {
 }
 
 .button__wrapper {
+    grid-area: button;
     display: flex;
     flex-direction: column;
     row-gap: 32px;
@@ -45,13 +47,6 @@ textarea {
     font-weight: 300;
     line-height: 16px;
     color: $gray;
-}
-
-@media (max-width: 1024px) {
-    input::placeholder,
-    textarea::placeholder {
-        font-size: 14px;
-    }
 }
 
 @media (max-width: 768px) {
