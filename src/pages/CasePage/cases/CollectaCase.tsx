@@ -75,7 +75,7 @@ export default function CollectaCase() {
                         <div className="collecta__problem-wrapper">
                             <div className="collecta__problem-desc">
                                 <p className="collecta__problem-text">
-                                    Сегодня, для решения аналитических задач, компании используют десятки разрозненных систем и инструментов.
+                                    Сегодня, для решения аналитических задач, компании используют десятки разрозненных систем и&nbsp;инструментов.
                                 </p>
                                 <p className="collecta__problem-text">
                                     Переключение между системами усложняет рабочие процессы, увеличивает количество ручных операций и замедляет принятие решений.
@@ -146,69 +146,71 @@ export default function CollectaCase() {
                         </div>
                     </div>
                     <div className="collecta__research-table">
-                        <table className="research__table">
-                            <thead>
-                                <tr>
-                                    <th className="research__table-th research__table-th--feature">
-                                        <span className="research__table-name">Возможности</span>
-                                    </th>
-                                    <th className="research__table-th">
-                                        <div className="research__table-th-wrapper">
-                                            <img src={grafanaLogo} alt="Grafana" className="research__table-logo" />
-                                            <span className="research__table-name">Grafana</span>
-                                        </div>
-                                    </th>
-                                    <th className="research__table-th">
-                                        <div className="research__table-th-wrapper">
-                                            <img src={signozLogo} alt="Signoz" className="research__table-logo" />
-                                            <span className="research__table-name">Signoz</span>
-                                        </div>
-                                    </th>
-                                    <th className="research__table-th">
-                                        <div className="research__table-th-wrapper">
-                                            <img src={kibanaLogo} alt="Kibana" className="research__table-logo" />
-                                            <span className="research__table-name">Kibana</span>
-                                        </div>
-                                    </th>
-                                    <th className="research__table-th">
-                                        <div className="research__table-th-wrapper">
-                                            <img src={splunkLogo} alt="Splunk" className="research__table-logo" />
-                                            <span className="research__table-name">Splunk</span>
-                                        </div>
-                                    </th>
-                                    <th className="research__table-th">
-                                        <div className="research__table-th-wrapper">
-                                            <img src={collectaLogo} alt="Collecta" className="research__table-logo" />
-                                            <span className="research__table-name">Collecta</span>
-                                        </div>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {collectaFeatures.map((feature, index) => (
-                                    <tr key={index}>
-                                        <td className="research__table-td research__table-td--feature">
-                                            {feature.name}
-                                        </td>
-                                        <td className="research__table-td research__table-td--status">
-                                            <img src={feature.grafana} alt="Grafana" className="research__table-icon" />
-                                        </td>
-                                        <td className="research__table-td research__table-td--status">
-                                            <img src={feature.signoz} alt="Signoz" className="research__table-icon" />
-                                        </td>
-                                        <td className="research__table-td research__table-td--status">
-                                            <img src={feature.kibana} alt="Kibana" className="research__table-icon" />
-                                        </td>
-                                        <td className="research__table-td research__table-td--status">
-                                            <img src={feature.splunk} alt="Splunk" className="research__table-icon" />
-                                        </td>
-                                        <td className="research__table-td research__table-td--status">
-                                            <img src={feature.collecta} alt="Collecta" className="research__table-icon" />
-                                        </td>
+                        <div className="research__table-scroll">
+                            <table className="research__table">
+                                <thead>
+                                    <tr>
+                                        <th className="research__table-th research__table-th--feature">
+                                            <span className="research__table-name">Возможности</span>
+                                        </th>
+                                        <th className="research__table-th">
+                                            <div className="research__table-th-wrapper">
+                                                <img src={grafanaLogo} alt="Grafana" className="research__table-logo" />
+                                                <span className="research__table-name">Grafana</span>
+                                            </div>
+                                        </th>
+                                        <th className="research__table-th">
+                                            <div className="research__table-th-wrapper">
+                                                <img src={signozLogo} alt="Signoz" className="research__table-logo" />
+                                                <span className="research__table-name">Signoz</span>
+                                            </div>
+                                        </th>
+                                        <th className="research__table-th">
+                                            <div className="research__table-th-wrapper">
+                                                <img src={kibanaLogo} alt="Kibana" className="research__table-logo" />
+                                                <span className="research__table-name">Kibana</span>
+                                            </div>
+                                        </th>
+                                        <th className="research__table-th">
+                                            <div className="research__table-th-wrapper">
+                                                <img src={splunkLogo} alt="Splunk" className="research__table-logo" />
+                                                <span className="research__table-name">Splunk</span>
+                                            </div>
+                                        </th>
+                                        <th className="research__table-th">
+                                            <div className="research__table-th-wrapper">
+                                                <img src={collectaLogo} alt="Collecta" className="research__table-logo" />
+                                                <span className="research__table-name">Collecta</span>
+                                            </div>
+                                        </th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    {collectaFeatures.map((feature, index) => (
+                                        <tr key={index}>
+                                            <td className="research__table-td research__table-td--feature">
+                                                {feature.name}
+                                            </td>
+                                            <td className="research__table-td research__table-td--status">
+                                                <img src={feature.grafana} alt="Grafana" className="research__table-icon" />
+                                            </td>
+                                            <td className="research__table-td research__table-td--status">
+                                                <img src={feature.signoz} alt="Signoz" className="research__table-icon" />
+                                            </td>
+                                            <td className="research__table-td research__table-td--status">
+                                                <img src={feature.kibana} alt="Kibana" className="research__table-icon" />
+                                            </td>
+                                            <td className="research__table-td research__table-td--status">
+                                                <img src={feature.splunk} alt="Splunk" className="research__table-icon" />
+                                            </td>
+                                            <td className="research__table-td research__table-td--status">
+                                                <img src={feature.collecta} alt="Collecta" className="research__table-icon" />
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                         <div className="research__legend">
                             <span className="research__legend-item"><img src={crossIcon} alt="Не поддерживается" /> Не поддерживается</span>
                             <span className="research__legend-item"><img src={partialIcon} alt="Частичная поддержка" />Частичная поддержка</span>

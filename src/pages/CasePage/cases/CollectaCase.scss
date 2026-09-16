@@ -87,8 +87,7 @@
 }
 
 /* Problem | Research | Solution */
-.collecta__problem-container,
-.collecta__research-container {
+.collecta__problem-container {
     display: flex;
     flex-direction: column;
     gap: 64px;
@@ -187,19 +186,34 @@
 }
 
 /* Table */
+.collecta__research-container {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding-bottom: 64px;
+}
+
 .collecta__research-table {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
     width: 100%;
     background-color: $plashka;
     border-radius: 16px;
-    overflow: hidden;
     padding: 32px;
+}
+
+.research__table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .research__table {
     width: 100%;
+    min-width: 900px;      // создаёт переполнение -> скроллится вся таблица
     border-collapse: separate;
     border-spacing: 0;
-    margin-bottom: 32px;
+    table-layout: fixed;
 
     // Стили для заголовков
     .research__table-th {
@@ -220,7 +234,8 @@
     }
 
     .research__table-th--feature {
-        width: auto;
+        width: 40%;
+        padding-right: 24px;
     }
 
     .research__table-th-wrapper {
@@ -231,14 +246,12 @@
         width: 100%;
     }
 
-    // Логотип
     .research__table-logo {
         height: 24px;
         width: auto;
         object-fit: contain;
     }
 
-    // Название
     .research__table-name {
         font-family: $font-primary;
         font-weight: 600;
@@ -270,7 +283,8 @@
         line-height: 120%;
         color: $white;
         text-align: left;
-        width: auto;
+        width: 40%;
+        padding-right: 24px;
     }
 
     .research__table-td--status{
@@ -279,14 +293,14 @@
        width: 12%;
     }
 
-        .research__table-icon {
+    .research__table-icon {
         display: inline-block;
     }
 
-       // Стили для Последней ячейки
+    // Стили для Последней ячейки
     tbody tr:last-child td:last-child {
-        border-bottom: 1px solid $yellow-green; // ← Gradница
-        border-radius: 0 0 16px 16px; // ← Скругление
+        border-bottom: 1px solid $yellow-green; 
+        border-radius: 0 0 16px 16px; 
     }
 }
 
@@ -312,7 +326,6 @@
     flex-direction: column;
     gap: 64px;
 }
-
 
 /* Interfaces */
 .interface__block {
@@ -393,6 +406,183 @@
             margin-top: 320px; // Самый большой сдвиг вниз
             position: relative;
             z-index: 3;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .collecta__hero-container, 
+    .collecta__problem-container, 
+    .collecta__research-container {
+        gap: 32px;
+    }
+
+    .collecta__top-content {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .collecta__title {
+        font-size: 32px;
+    }
+
+    .collecta__uppercase-text {
+        font-size: 24px;
+        max-width: 400px;
+    }
+
+    .collecta__thumbnail,
+    .collecta__problem-scheme {
+        padding: 32px;
+        height: 450px;
+    }
+
+    .collecta__thumbnail-img {
+        width: 100%;
+    }
+
+    .collecta__problem-content, 
+    .collecta__research-content, 
+    .collecta__solution-content {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .collecta__problem-wrapper, 
+    .collecta__research-wrapper, 
+    .collecta__solution-wrapper {
+        max-width: 100%;
+    }
+
+    .collecta__problem-title, 
+    .collecta__research-title, 
+    .collecta__solution-title {
+        font-size: 24px;
+    }
+
+    .collecta__problem-goal-title, 
+    .collecta__problem-role-title, 
+    .collecta__research-summary-title, 
+    .collecta__solution-result-title {
+        font-size: 18px;
+    }
+
+    .collecta__problem-text, 
+    .collecta__research-text, 
+    .collecta__solution-text {
+        font-size: 18px;
+    }
+
+    .collecta__solution-container {
+        gap: 32px;
+    }
+
+    .research__legend {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .collecta__thumbnail, 
+    .collecta__problem-scheme {
+        padding: 16px;
+        height: 400px;
+    }
+
+    .collecta__research-table {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .research__legend {
+        flex-direction: column;
+    }
+
+    .interface__block {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .interface__block-number,
+    .interface__block-title {
+        font-size: 18px;
+    }
+
+    .interface__block-subtitle {
+        font-size: 14px;
+    }
+
+    .interface__block-content--03 {
+        .interface__block-image {
+            // 2-я картинка (наезжает на 1-ю, уходит вниз)
+            &:nth-child(2) {
+                margin-top: 80px;  // Сдвиг вниз
+            }
+
+            // 3-я картинка (наезжает на 2-ю, уходит еще ниже)
+            &:nth-child(3) {
+                margin-top: 160px; // Самый большой сдвиг вниз
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .collecta__uppercase-text {
+        font-size: 18px;
+        max-width: 350px;
+    }
+
+    .collecta__info {
+        padding: 16px 0;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .collecta__thumbnail, 
+    .collecta__problem-scheme {
+        height: 300px;
+    }
+
+    .research__table {
+        .research__table-th--feature,
+        .research__table-td--feature {
+            width: 20%;   // ≈ 200px при min-width 900px
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .collecta__hero-container {
+        padding-top: 16px;
+    }
+
+    .collecta__title {
+        font-size: 28px;
+    }
+
+    .collecta__thumbnail, 
+    .collecta__problem-scheme {
+        height: 250px;
+    }
+
+    .collecta__problem-title, 
+    .collecta__research-title, 
+    .collecta__solution-title {
+        font-size: 22px;
+    }
+
+    .interface__block-content--03 {
+        .interface__block-image {
+            // 2-я картинка (наезжает на 1-ю, уходит вниз)
+            &:nth-child(2) {
+                margin-top: 40px;  // Сдвиг вниз
+            }
+
+            // 3-я картинка (наезжает на 2-ю, уходит еще ниже)
+            &:nth-child(3) {
+                margin-top: 80px; // Самый большой сдвиг вниз
+            }
         }
     }
 }
