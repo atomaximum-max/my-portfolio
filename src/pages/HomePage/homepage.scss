@@ -134,6 +134,14 @@
 }
 
 /* About */
+#about,
+#cases,
+#feedback, 
+#footer {
+    overflow-x: clip;
+    overflow-y: visible;
+}
+
 .about__left {
     margin-bottom: 32px;
 }
@@ -278,9 +286,12 @@
     inset: 0;
     z-index: 2000;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 20px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(4px);
     animation: fadeIn 0.3s ease;
@@ -288,13 +299,12 @@
 
 .modal__content {
     position: relative;
+    margin: auto;
     display: flex;
     flex-direction: column;
     gap: 32px;
     width: 100%;
     max-width: 700px;
-    max-height: 90vh;
-    overflow-y: auto;
     padding: 32px;
     background: $plashka;
     border-radius: 16px;
@@ -524,11 +534,11 @@
         max-width: 100%;
     }
 
-    .modal-content {
+    .modal__content {
         padding: 24px 16px;
     }
 
-    .modal-title {
+    .modal__title {
         font-size: 20px;
     }
 }

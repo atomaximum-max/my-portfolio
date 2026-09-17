@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { Input } from './ui/Input';
 import { Textarea } from './ui/Textarea';
 import { Button } from './ui/Button';
+import { motion } from "motion/react";
 
 import './Form.scss';
 
@@ -73,11 +74,15 @@ const Form: React.FC<FormProps> = ({ formClassName, isModal }) => {
 
   return (
     <div className={`form__wrapper ${formClassName || ''}`}>
-      <form
+      <motion.form
         className="form"
         id="feedback-form"
         noValidate
         onSubmit={handleFormSubmit}
+        initial={isModal ? false : { opacity: 0, x: 40 }}
+        whileInView={isModal ? undefined : { opacity: 1, x: 0 }}
+        viewport={isModal ? undefined : { once: true, amount: 0.1, margin: "0px 0px -100px 0px" }}
+        transition={isModal ? undefined : { duration: 0.7, ease: "linear" }}
       >
         <Input
           className="form__input"
@@ -130,7 +135,13 @@ const Form: React.FC<FormProps> = ({ formClassName, isModal }) => {
           {...register('text')}
         />
 
-        <div className={`button__wrapper ${isModal ? 'button__wrapper--modal' : ''}`}>
+        <motion.div 
+          className={`button__wrapper ${isModal ? 'button__wrapper--modal' : ''}`}
+          initial={isModal ? false : { opacity: 0, y: 40 }}
+          whileInView={isModal ? undefined : { opacity: 1, y: 0 }}
+          viewport={isModal ? undefined : { once: true, amount: 0, margin: "0px 0px -50px 0px" }}
+          transition={isModal ? undefined : { duration: 0.4, ease: "linear", delay: 0.2 }}
+        >
           <Button
             type="submit"
             variant="primary"
@@ -139,16 +150,23 @@ const Form: React.FC<FormProps> = ({ formClassName, isModal }) => {
           >
             {isLoading ? 'Отправляем...' : 'Отправить'}
           </Button>
-      </div>
-      </form>
-      <div className="hints">
-          <p>*Поля обязательны к заполнению</p>
-          <p>
-            **Нажимая на кнопку «Оставить заявку» вы подтверждаете согласие на обработку
-            персональных данных в соответствии с Федеральным законом РФ от 27 июля 2006 года
-            № 152-ФЗ «О персональных данных»
-          </p>
-        </div>
+        </motion.div>
+      </motion.form>
+
+      <motion.div 
+        className="hints"
+        initial={isModal ? false : { opacity: 0 }}
+        whileInView={isModal ? undefined : { opacity: 1 }}
+        viewport={isModal ? undefined : { once: true, amount: 0.1, margin: "0px 0px -100px 0px" }}
+        transition={isModal ? undefined : { duration: 0.4, ease: "linear", delay: 0.4 }}
+      >
+        <p>*Поля обязательны к заполнению</p>
+        <p>
+          **Нажимая на кнопку «Оставить заявку» вы подтверждаете согласие на обработку
+          персональных данных в соответствии с Федеральным законом РФ от 27 июля 2006 года
+          № 152-ФЗ «О персональных данных»
+        </p>
+      </motion.div>
     </div>
   );
 };

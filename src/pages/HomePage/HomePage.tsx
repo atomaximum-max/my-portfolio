@@ -7,6 +7,7 @@ import Form from "../../components/Form";
 import { Button } from "../../components/ui/Button";
 import { casesData } from "../../data/cases";
 import HeroSpline from "../../components/HeroSpline";
+import { motion } from "motion/react";
 
 import avatarImage from "../../assets/img/profile.jpeg";
 import figmaLogo from '../../assets/img/figma.svg';
@@ -41,30 +42,93 @@ export default function HomePage() {
         <section id="hero">
             <div className="container hero__container">
                 <div className="hero__wrapper">
-                    <h1 className="hero__title">Продуктовый дизайн и&nbsp;веб-разработка</h1>
-                    <div className="hero__separator" />
-                    <div className="hero__avatar-card">
-                        <img className="hero__avatar" src={avatarImage} alt="Аватар" />
-                        <div className="hero__avatar-info">
-                        <div className="hero__avatar-name">Максим Барманов</div>
-                        <div className="hero__avatar-desc">
-                            Product Design Lead | UX Engineer | Design-to-Code Specialist
-                        </div>
-                        </div>
-                    </div>
+                    <motion.h1 
+                        className="hero__title"
+                        initial={{ x: -50, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        viewport={{ once: false, amount: 0.6 }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                    > 
+                        Продуктовый дизайн и&nbsp;веб-разработка
+                    </motion.h1>
+                    <motion.div 
+                        className="hero__separator"
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ 
+                            duration: 0.8, 
+                            delay: 0.5,
+                            ease: "easeOut" 
+                        }} 
+                    />
+                    <motion.div 
+                        className="hero__avatar-card"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.5 }}
+                    >
+                        <motion.img 
+                            className="hero__avatar" 
+                            src={avatarImage} 
+                            alt="Аватар"
+                            initial={{ x: -300, rotate: -1440, opacity: 0 }}
+                            animate={{ x: 0, rotate: 0, opacity: 1 }}
+                            whileHover={{ scale: 1.05, rotate: 5 }}
+                            transition={{ 
+                                type: "spring",
+                                stiffness: 30,
+                                damping: 10,
+                                mass: 1,
+                                delay: 0.4 
+                            }} 
+                        />
+                        <motion.div 
+                            className="hero__avatar-info"
+                            initial={{ opacity: 0, x: -20, scale: 0.8 }}
+                            animate={{ opacity: 1, x: 0, scale: 1 }}
+                            transition={{ 
+                                duration: 0.5, 
+                                delay: 1.2,
+                                ease: "easeOut"
+                            }}
+                        >
+                            <div className="hero__avatar-name">Максим Барманов</div>
+                            <div className="hero__avatar-desc">
+                                Product Design Lead | UX Engineer | Design-to-Code Specialist
+                            </div>
+                        </motion.div>
+                    </motion.div>
                 </div>
                 <HeroSpline />
                 <div className="hero__cta">
-                    <p className="hero__cta-desc">
-                        От идеи до интерфейса, готового&nbsp;к&nbsp;запуску
-                    </p>
-                    <Button
-                        onClick={openModal}
-                        variant={"primary"}
-                        className={'hero__сta-btn'}
+                    <motion.p 
+                        className="hero__cta-desc"
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ 
+                            duration: 0.8, 
+                            ease: "easeOut", 
+                            delay: 1.1
+                        }}
                     >
-                        Обсудить проект
-                    </Button>
+                        От идеи до интерфейса, готового&nbsp;к&nbsp;запуску
+                    </motion.p>
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ 
+                            duration: 0.6, 
+                            ease: "easeOut", 
+                            delay: 1.4
+                        }}
+                    > 
+                        <Button
+                            onClick={openModal}
+                            variant={"primary"}
+                            className={'hero__сta-btn'}
+                        >
+                            Обсудить проект</Button>
+                    </motion.div>
                 </div>
             </div>
         </section>
@@ -72,11 +136,23 @@ export default function HomePage() {
         <section id="about">
             <div className="container about__container">
                 <div className="about__left">
-                    <p className="about__greeting">
+                    <motion.p 
+                        className="about__greeting"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
                         Привет! меня зовут Максим, я&nbsp;UX/UI дизайнер с экспертизой в&nbsp;frontend-разработке
-                    </p>
+                    </motion.p>
                 </div>
-                <div className="about__right">
+                <motion.div 
+                    className="about__right"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
                     <h2 className='about__title'>О себе</h2>
                     <div className="about__desc">
                         <p className="about__text">
@@ -89,7 +165,7 @@ export default function HomePage() {
                             2 экспертизы позволяют осуществлять полный цикл разработки, от UX - концепции и&nbsp;дизайна до готовой frontend-реализации.
                         </p>
                     </div>
-                </div>
+                </motion.div>
                 <ScrollMarquee 
                     speed={150}
                     mobileSpeed={60}
@@ -101,11 +177,23 @@ export default function HomePage() {
                 <Experience />
                 <SocialBar className="about__social"/>
                 <div className="about__left">
-                    <p className="about__greeting">
+                    <motion.p 
+                        className="about__greeting"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
                         Создаю цифровые продукты,  которые упрощают процессы и&nbsp;решают задачи бизнеса
-                    </p>
+                    </motion.p>
                 </div>
-                <div className="about__right">
+                <motion.div 
+                    className="about__right"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
                     <h2 className='about__title'>Мой подход</h2>
                     <div className="about__desc">
                         <p className="about__text">
@@ -118,7 +206,7 @@ export default function HomePage() {
                             Разработка интерфейсов с использованием современных фронтенд-технологий, реализация дизайна и кода, как единого процесса.
                         </p>
                     </div>
-                </div>
+                </motion.div>
                 <ScrollMarquee 
                     speed={100}
                     mobileSpeed={60}
@@ -148,7 +236,7 @@ export default function HomePage() {
                 <h2 className="cases__title">Кейсы</h2>
                 {/* ← СПИСОК КЕЙСОВ ИЗ МАССИВА */}
                 <div className="cases__grid">
-                    {casesData.slice(0, showMoreCases ? casesData.length : 4).map((caseItem) => (
+                    {casesData.slice(0, showMoreCases ? casesData.length : 4).map((caseItem, index) => (
                         <CaseCard
                             key={caseItem.id}
                             year={caseItem.year}
@@ -156,6 +244,7 @@ export default function HomePage() {
                             description={caseItem.description}
                             image={caseItem.image}
                             link={caseItem.link}
+                            index={index}
                         />
                     ))}     
                 </div>
@@ -171,16 +260,27 @@ export default function HomePage() {
 
         <section id="feedback">
             <div className='container feedback__container'>
-                <h3 className="feedback__title">
+                <motion.h3 
+                    className="feedback__title"
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+                    transition={{ duration: 0.6, ease: "linear" }}
+                >
                     Есть вопросы или нужна консультация?
-                </h3>
+                </motion.h3>
                 <div className="feedback__wrapper">
-                    <p className="feedback__description">
+                    <motion.p 
+                        className="feedback__description"
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+                        transition={{ duration: 0.6, ease: "linear", delay: 0.15 }}
+                    >
                         Оставьте свое сообщение, и я оперативно свяжусь с вами, чтобы предоставить необходимую поддержку
-                    </p>
+                    </motion.p>
                     <Form />
                 </div>
-
             </div>            
         </section>
 
@@ -201,7 +301,7 @@ export default function HomePage() {
                             Оставьте свое сообщение, и я оперативно свяжусь с вами, чтобы уточнить детали
                         </p>
                     </div>
-                    <Form isModal formClassName="moadal__form-feedback" />
+                    <Form isModal formClassName="modal__form-feedback" />
                 </div>
             </div>
         )}

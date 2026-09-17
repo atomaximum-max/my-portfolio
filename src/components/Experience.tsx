@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from "motion/react";
 
 import './Experience.scss';
 
@@ -45,18 +46,38 @@ const Experience: React.FC = () => {
     return (
         <div className="experience">
             <h2 className="experience__title">Опыт</h2>
-            <ul className="experience__list">
+            <motion.ul 
+                className="experience__list"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+                variants={{
+                    hidden: {},
+                    visible: { transition: { staggerChildren: 0.4 } }
+                }}
+            >
                 {experienceData.map((item, index) => (
-                    <li className="experience__item" key={index}>
+                    <motion.li 
+                        className="experience__item" 
+                        key={index}
+                        variants={{
+                            hidden: { opacity: 0, y: 60 },
+                            visible: { 
+                                opacity: 1, 
+                                y: 0, 
+                                transition: { duration: 0.6, ease: "easeOut" } 
+                            }
+                        }}
+                    >
                         <div className="experience__period">{item.period}</div>
                         <div className="experience__content">
                             <h3 className="experience__position">{item.title}</h3>
                             <span className="experience__company">{item.company}</span>
                         </div>
                         <p className="experience__description">{item.description}</p>
-                    </li>
+                    </motion.li>
                 ))}
-            </ul>
+            </motion.ul>
         </div>
     );
 };
