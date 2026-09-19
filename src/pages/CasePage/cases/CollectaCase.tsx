@@ -1,5 +1,6 @@
 import { collectaFeatures } from '../../../data/collectaFeatures';
 import { InterfaceBlock } from '../../../components/InterfaceBlock';
+import { motion } from "motion/react";
 
 import collectaThumbnail from '../../../assets/img/Collecta-thumbnail.png';
 import collectaProblemImage from "../../../assets/img/Collecta-problem.png";
@@ -32,14 +33,32 @@ export default function CollectaCase() {
             <section className="collecta__hero">
                 <div className="container collecta__hero-container">
                     <div className="collecta__top-content">
-                        <h1 className="collecta__title">“Collecta”</h1>
-                        <p className="collecta__uppercase-text">
+                        <motion.h1 
+                            className="collecta__title"
+                            initial={{ opacity: 0, x: -80 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, ease: "linear" }}
+                        >
+                            “Collecta”
+                        </motion.h1>
+                        <motion.p 
+                            className="collecta__uppercase-text"
+                            initial={{ opacity: 0, x: 80 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, ease: "linear", delay: 0.2 }}
+                        >
                             Единая платформа сбора, обработки, анализа данных и&nbsp;автоматизации решений
-                        </p>
+                        </motion.p>
                     </div>
 
                     {/* Информационные строки */}
-                    <div className="collecta__info">
+                    <motion.div 
+                        className="collecta__info"
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.6 }}
+                        transition={{ duration: 1, ease: "linear" }}
+                    >
                         <div className="collecta__info-item">
                             <span className="collecta__info-label">Период</span>
                             <span className="collecta__info-value">2026</span>
@@ -56,14 +75,21 @@ export default function CollectaCase() {
                             <span className="collecta__info-label">Роль</span>
                             <span className="collecta__info-value">UX/UI дизайнер, UX инженер</span>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* ← ОБЛОЖКА КЕЙСА */}
                     <div className="collecta__thumbnail">
-                        <img 
+                        <motion.img 
                             src={collectaThumbnail} 
                             alt="Collecta Logo" 
                             className="collecta__thumbnail-img"
+                            initial={{ scale: 0, opacity: 0 }}
+                            whileInView={{ scale: 1, opacity: 1 }}
+                            viewport={{ once: true, amount: 0.5 }}
+                            transition={{ 
+                                duration: 0.6, 
+                                ease: [0.22, 1, 0.36, 1] 
+                            }}
                         />
                     </div>
                 </div>
@@ -71,39 +97,72 @@ export default function CollectaCase() {
             <section className="collecta__problem">
                 <div className="container collecta__problem-container">
                     <div className="collecta__problem-content">
-                        <h2 className="collecta__problem-title">Проблема</h2>
+                        <motion.h2 
+                            className="collecta__problem-title"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3, margin: "0px 0px -50px 0px" }}
+                            transition={{ duration: 0.6, ease: "linear" }}
+                        >
+                            Проблема
+                        </motion.h2>
                         <div className="collecta__problem-wrapper">
-                            <div className="collecta__problem-desc">
+                            <motion.div 
+                                className="collecta__problem-desc"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
+                                transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
+                            >
                                 <p className="collecta__problem-text">
                                     Сегодня, для решения аналитических задач, компании используют десятки разрозненных систем и&nbsp;инструментов.
                                 </p>
                                 <p className="collecta__problem-text">
                                     Переключение между системами усложняет рабочие процессы, увеличивает количество ручных операций и замедляет принятие решений.
                                 </p>
-                            </div>
-                            <div className="collecta__problem-goals">
+                            </motion.div>
+                            <motion.div 
+                                className="collecta__problem-goals"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
+                                transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
+                            >
                                 <h3 className="collecta__problem-goal-title">
                                     Цели проекта
                                 </h3>
                                 <p className="collecta__problem-goal-text"> 
-                                    Создание единой платформы для аналитики данных, способной заменить набор разрозненных инструментов. Спроектировать интерфейсы с&nbsp;акцентом на удобство работы, снижение когнитивной нагрузки и&nbsp;поддержку сложных пользовательских сценариев.
+                                    Создание единой платформы для аналитики данных способной заменить набор разрозненных инструментов. Спроектировать интерфейсы с&nbsp;акцентом на удобство работы, снижение когнитивной нагрузки и&nbsp;поддержку сложных пользовательских сценариев.
                                 </p>
-                            </div>
-                            <div className="collecta__problem-role">
+                            </motion.div>
+                            <motion.div 
+                                className="collecta__problem-role"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
+                                transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
+                            >
                                 <h3 className="collecta__problem-role-title">
                                     Моя роль
                                 </h3>
                                 <p className="collecta__problem-role-text"> 
                                     Отвечал за полный цикл UX/UI-проектирования — от исследования предметной области и&nbsp;анализа конкурентов до создания пользовательских сценариев, дизайн-системы и&nbsp;интерактивных прототипов. Основное внимание уделялось проектированию масштабируемых интерфейсов, способных адаптироваться к&nbsp;развитию продукта и&nbsp;потребностям разных ролей пользователей.
                                 </p>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                     <div className="collecta__problem-scheme">
-                        <img 
+                        <motion.img 
                             src={collectaProblemImage} 
                             alt="Collecta Problem Image" 
                             className="collecta__problem-img"
+                            initial={{ scale: 0, opacity: 0 }}
+                            whileInView={{ scale: 1, opacity: 1 }}
+                            viewport={{ once: true, amount: 0.5 }}
+                            transition={{ 
+                                duration: 0.6, 
+                                ease: [0.22, 1, 0.36, 1] 
+                            }}
                         />
                     </div>
                 </div>
@@ -111,17 +170,37 @@ export default function CollectaCase() {
             <section className="collecta__research">
                 <div className="container collecta__research-container">
                     <div className="collecta__research-content">
-                        <h2 className="collecta__research-title">Исследование</h2>
+                        <motion.h2 
+                            className="collecta__research-title"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3, margin: "0px 0px -50px 0px" }}
+                            transition={{ duration: 0.6, ease: "linear" }}
+                        >
+                            Исследование
+                        </motion.h2>
                         <div className="collecta__research-wrapper">
-                            <div className="collecta__research-desc">
+                            <motion.div 
+                                className="collecta__research-desc"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
+                                transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
+                            >
                                 <p className="collecta__research-text">
                                     На этапе исследования была изучена предметная область, проведён анализ конкурентных решений и&nbsp;рабочих процессов пользователей.
                                 </p>
                                 <p className="collecta__research-text">
                                     Полученные выводы легли в основу архитектуры продукта, пользовательских сценариев и&nbsp;ключевых UX-решений.
                                 </p>
-                            </div>
-                            <div className="collecta__research-summary">
+                            </motion.div>
+                            <motion.div 
+                                className="collecta__research-summary"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
+                                transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
+                            >
                                 <h3 className="collecta__research-summary-title">
                                     Ключевые выводы
                                 </h3>
@@ -142,13 +221,18 @@ export default function CollectaCase() {
                                         Выделены UX-паттерны и лучшие практики на основе анализа конкурентных платформ
                                     </li>
                                 </ul>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                     <div className="collecta__research-table">
                         <div className="research__table-scroll">
                             <table className="research__table">
-                                <thead>
+                                <motion.thead
+                                    initial={{ opacity: 0, y: -20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
+                                    transition={{ duration: 0.5, ease: "linear" }}
+                                >
                                     <tr>
                                         <th className="research__table-th research__table-th--feature">
                                             <span className="research__table-name">Возможности</span>
@@ -184,10 +268,20 @@ export default function CollectaCase() {
                                             </div>
                                         </th>
                                     </tr>
-                                </thead>
+                                </motion.thead>
                                 <tbody>
                                     {collectaFeatures.map((feature, index) => (
-                                        <tr key={index}>
+                                        <motion.tr 
+                                            key={index}
+                                            initial={{ opacity: 0, y: 20 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
+                                            transition={{ 
+                                                duration: 0.4, 
+                                                ease: "linear", 
+                                                delay: index * 0.08 
+                                            }}
+                                        >
                                             <td className="research__table-td research__table-td--feature">
                                                 {feature.name}
                                             </td>
@@ -206,40 +300,66 @@ export default function CollectaCase() {
                                             <td className="research__table-td research__table-td--status">
                                                 <img src={feature.collecta} alt="Collecta" className="research__table-icon" />
                                             </td>
-                                        </tr>
+                                        </motion.tr>
                                     ))}
                                 </tbody>
                             </table>
                         </div>
-                        <div className="research__legend">
+                        <motion.div 
+                            className="research__legend"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.5 }}
+                            transition={{ duration: 0.6, ease: "linear", delay: 0.3 }}
+                        >
                             <span className="research__legend-item"><img src={crossIcon} alt="Не поддерживается" /> Не поддерживается</span>
                             <span className="research__legend-item"><img src={partialIcon} alt="Частичная поддержка" />Частичная поддержка</span>
                             <span className="research__legend-item"><img src={checkIcon} alt="Полная поддержка" />Полная поддержка</span>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
             <section className="collecta__solution">
                 <div className="container collecta__solution-container">
                     <div className="collecta__solution-content">
-                        <h2 className="collecta__solution-title">Решение</h2>
+                        <motion.h2 
+                            className="collecta__solution-title"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3, margin: "0px 0px -50px 0px" }}
+                            transition={{ duration: 0.6, ease: "linear" }}
+                        >
+                            Решение
+                        </motion.h2>
                         <div className="collecta__solution-wrapper">
-                            <div className="collecta__solution-desc">
+                            <motion.div 
+                                className="collecta__solution-desc"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
+                                transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
+                            >
                                 <p className="collecta__solution-text">
                                     На основе результатов исследования была спроектирована единая система интерфейсов, объединяющая сбор, обработку и&nbsp;анализ данных в&nbsp;рамках одного продукта.
                                 </p>
                                 <p className="collecta__solution-text">
                                     Особое внимание уделялось удобству работы с&nbsp;большими объёмами данных и&nbsp;поддержке различных пользовательских ролей.
                                 </p>
-                            </div>
-                            <div className="collecta__solution-result">
+                            </motion.div>
+                            <motion.div 
+                                className="collecta__solution-result"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
+                                transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
+                            >
                                 <h3 className="collecta__solution-result-title">
                                     Результат
                                 </h3>
                                 <p className="collecta__solution-result-text"> 
                                     В процессе работы на проекте реализовал масштабируемую дизайн-систему (30+ компонентов), спроектировал пользовательские сценарии для трёх ролей и&nbsp;разработал интерфейсы ключевых модулей и&nbsp;состояний платформы, более 40 макетов. Подготовленные материалы обеспечили основу для дальнейшей frontend-разработки и&nbsp;развития продукта.
                                 </p>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                     <InterfaceBlock

@@ -1,11 +1,9 @@
 import { useParams } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
 import { BackButton } from '../../components/ui/BackButton';
+import CollectaCase from './cases/CollectaCase';
 
-// Динамический импорт компонентов кейсов
 const cases = {
-  collecta: lazy(() => import('../CasePage/cases/CollectaCase')),
-
+  collecta: CollectaCase,
 };
 
 export default function CasePage() {
@@ -28,9 +26,7 @@ export default function CasePage() {
   return (
     <main>
         <BackButton />
-        <Suspense fallback={<div className="container case__loading">Загрузка...</div>}>
           <CaseComponent />
-        </Suspense>
     </main>
   );
 }

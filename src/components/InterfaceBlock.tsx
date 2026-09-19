@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import './InterfaceBlock.scss';
 
 interface InterfaceBlockProps {
@@ -16,7 +17,13 @@ export const InterfaceBlock = ({
     children,
 }: InterfaceBlockProps) => {
     return (
-        <div className={className}> {/* ← добавил className */}
+        <motion.div 
+            className={className}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -100px 0px" }}
+            transition={{ duration: 0.6, ease: "linear" }}
+        >
             <div className="interface__block-wrapper">
                 <div className="interface__block-header">
                     <span className="interface__block-number">{number}</span>
@@ -25,6 +32,6 @@ export const InterfaceBlock = ({
                 <p className="interface__block-subtitle">{subtitle}</p>
             </div>
             {children}
-        </div>
+        </motion.div>
     );
 };
