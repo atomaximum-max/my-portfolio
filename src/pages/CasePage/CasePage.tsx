@@ -1,9 +1,12 @@
 import { useParams } from 'react-router-dom';
 import { BackButton } from '../../components/ui/BackButton';
+
 import CollectaCase from './cases/CollectaCase';
+import ProxWayWebCase from './cases/ProxWayWebCase';
 
 const cases = {
   collecta: CollectaCase,
+  proxway: ProxWayWebCase,
 };
 
 export default function CasePage() {
