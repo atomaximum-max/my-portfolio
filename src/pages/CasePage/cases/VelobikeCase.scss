@@ -1,7 +1,7 @@
 @use "../../../styles/variables" as *;
 
 /* Hero */
-.proxway__hero-container {
+.velobike__hero-container {
     display: flex;
     flex-direction: column;
     gap: 64px;
@@ -9,12 +9,12 @@
     padding-bottom: 64px;
 }
 
-.proxway__top-content {
+.velobike__top-content {
     display: flex;
     justify-content: space-between;
 }
 
-.proxway__title {
+.velobike__title {
     max-width: 585px;
     font-family: $font-secondary;
     font-size: 46px;
@@ -22,7 +22,7 @@
     color: $white;
 }
 
-.proxway__uppercase-text {
+.velobike__uppercase-text {
     max-width: 585px;
     font-family: $font-primary;
     font-size: 32px;
@@ -35,7 +35,7 @@
     }
 }
 
-.proxway__info {
+.velobike__info {
     display: grid;
     grid-template-columns: auto auto auto auto; // все по ширине контента
     justify-content: space-between; // растягиваем по всей ширине
@@ -45,13 +45,13 @@
     border-bottom: 1px solid $border-dark;
 }
 
-.proxway__info-item {
+.velobike__info-item {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.proxway__info-label {
+.velobike__info-label {
     font-family: $font-primary;
     font-weight: 400;
     font-size: 16px;
@@ -59,7 +59,7 @@
     color: $gray;
 }
 
-.proxway__info-value {
+.velobike__info-value {
     font-family: $font-primary;
     font-weight: 400;
     font-size: 18px;
@@ -67,9 +67,9 @@
     color: $white;  
 }
 
-.proxway__thumbnail,
-.proxway__problem-images, 
-.proxway__research-images {
+.velobike__thumbnail,
+.velobike__problem-scheme, 
+.velobike__research-images {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,33 +79,33 @@
     border-radius: 16px;
 }
 
-.proxway__thumbnail-img {
+.velobike__thumbnail-img {
     width: 100%;          // ← занимает всю ширину родителя
     height: auto;          // ← сохраняет пропорции
     display: block;
 }
 
 /* Problem | Research | Solution */
-.proxway__problem-container,
-.proxway__research-container,
-.proxway__solution-container {
+.velobike__problem-container,
+.velobike__research-container,
+.velobike__solution-container {
     display: flex;
     flex-direction: column;
     gap: 64px;
     padding-bottom: 64px;
 }
 
-.proxway__problem-content,
-.proxway__research-content,
-.proxway__solution-content {
+.velobike__problem-content,
+.velobike__research-content,
+.velobike__solution-content {
     display: flex;
     justify-content: space-between;
     gap: 64px;
 }
 
-.proxway__problem-title,
-.proxway__research-title,
-.proxway__solution-title {
+.velobike__problem-title,
+.velobike__research-title,
+.velobike__solution-title {
     max-width: 585px;
     font-family: $font-secondary;
     font-size: 32px;
@@ -113,45 +113,45 @@
     color: $white;
 }
 
-.proxway__problem-wrapper,
-.proxway__research-wrapper,
-.proxway__solution-wrapper {
+.velobike__problem-wrapper,
+.velobike__research-wrapper,
+.velobike__solution-wrapper {
     max-width: 585px;
     display: flex;
     flex-direction: column;
     gap: 32px;
 }
 
-.proxway__problem-desc,
-.proxway__research-desc,
-.proxway__solution-desc {
+.velobike__problem-desc,
+.velobike__research-desc,
+.velobike__solution-desc {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.proxway__problem-text,
-.proxway__research-text,
-.proxway__solution-text {
+.velobike__problem-text,
+.velobike__research-text,
+.velobike__solution-text {
     font-family: inherit;
     font-weight: 300;
     font-size: 24px;
     line-height: 120%;
 }
 
-.proxway__problem-goals,
-.proxway__problem-role,
-.proxway__research-summary,
-.proxway__solution-result {
+.velobike__problem-goals,
+.velobike__problem-role,
+.velobike__research-summary,
+.velobike__solution-result {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.proxway__problem-goal-title,
-.proxway__problem-role-title,
-.proxway__research-summary-title,
-.proxway__solution-result-title {
+.velobike__problem-goal-title,
+.velobike__problem-role-title,
+.velobike__research-summary-title,
+.velobike__solution-result-title {
     font-family: $font-secondary;
     font-weight: 600;
     font-size: 20px;
@@ -161,10 +161,10 @@
     border-bottom: 1px solid $border-dark;
 }
 
-.proxway__problem-goal-text,
-.proxway__problem-role-text,
-.proxway__research-summary-item,
-.proxway__solution-result-text {
+.velobike__problem-goal-text,
+.velobike__problem-role-text,
+.velobike__research-summary-item,
+.velobike__solution-result-text {
     font-family: $font-primary;
     font-weight: 400;
     font-size: 16px;
@@ -172,69 +172,27 @@
     color: $white;
 }
 
-.proxway__problem-content--03 {
-    display: flex;
-    align-items: flex-start;
+.velobike__problem-img {
     width: 100%;
-
-    .proxway__problem-image {
-        width: 70%; // Все картинки крупные
-        height: auto;
-        border-radius: 8px;
-        flex-shrink: 0; // Запрещаем сжиматься
-
-        // 1-я картинка (верхняя левая)
-        &:nth-child(1) {
-            position: relative;
-            z-index: 1;
-        }
-
-        // 2-я картинка (наезжает на 1-ю, уходит вниз)
-        &:nth-child(2) {
-            margin-left: -55%; // Наезд влево
-            margin-top: 160px;  // Сдвиг вниз
-            position: relative;
-            z-index: 2;
-        }
-
-        // 3-я картинка (наезжает на 2-ю, уходит еще ниже)
-        &:nth-child(3) {
-            margin-left: -55%; // Наезд влево
-            margin-top: 320px; // Самый большой сдвиг вниз
-            position: relative;
-            z-index: 3;
-        }
-    }
+    height: auto;
+    display: block;
 }
 
-.proxway__research-summary-list {
+.velobike__research-summary-list {
     list-style: disc;
     padding-left: 20px;
-     display: flex;
+    display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.proxway__research-content--02 {
-    display: flex;
-    gap: $gap-md;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: wrap;
-
-    .proxway__research-image {
-       width: 100%;
-       height: auto;
-       object-fit: contain;
-       display: block;
-       flex-shrink: 0;
-       border-radius: 8px;
-    }
-
-    .proxway__research-image:first-child:nth-last-child(2),
-    .proxway__research-image:first-child:nth-last-child(2) ~ .proxway__research-image {
-        max-width: calc(50% - $gap-md / 2);
-    }
+.velobike__research-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+    border-radius: 8px;
 }
 
 /* Interfaces */
@@ -321,90 +279,76 @@
 }
 
 @media (max-width: 1024px) {
-    .proxway__hero-container, 
-    .proxway__problem-container, 
-    .proxway__research-container,
-    .proxway__solution-container {
+    .velobike__hero-container, 
+    .velobike__problem-container, 
+    .velobike__research-container,
+    .velobike__solution-container {
         gap: 32px;
     }
 
-    .proxway__top-content {
+    .velobike__top-content {
         flex-direction: column;
         gap: 16px;
     }
 
-    .proxway__title {
+    .velobike__title {
         font-size: 32px;
     }
 
-    .proxway__uppercase-text {
+    .velobike__uppercase-text {
         font-size: 24px;
         max-width: 450px;
     }
 
-    .proxway__problem-content, 
-    .proxway__research-content, 
-    .proxway__solution-content {
+    .velobike__problem-content, 
+    .velobike__research-content, 
+    .velobike__solution-content {
         flex-direction: column;
         gap: 16px;
     }
 
-    .proxway__problem-wrapper, 
-    .proxway__research-wrapper, 
-    .proxway__solution-wrapper {
+    .velobike__problem-wrapper, 
+    .velobike__research-wrapper, 
+    .velobike__solution-wrapper {
         max-width: 100%;
     }
 
-    .proxway__problem-title, 
-    .proxway__research-title, 
-    .proxway__solution-title {
+    .velobike__problem-title, 
+    .velobike__research-title, 
+    .velobike__solution-title {
         font-size: 24px;
     }
 
-    .proxway__problem-goal-title, 
-    .proxway__problem-role-title, 
-    .proxway__research-summary-title, 
-    .proxway__solution-result-title {
+    .velobike__problem-goal-title, 
+    .velobike__problem-role-title, 
+    .velobike__research-summary-title, 
+    .velobike__solution-result-title {
         font-size: 18px;
     }
 
-    .proxway__problem-text, 
-    .proxway__research-text, 
-    .proxway__solution-text {
+    .velobike__problem-text, 
+    .velobike__research-text, 
+    .velobike__solution-text {
         font-size: 18px;
     }
 }
 
 @media (max-width: 768px) {
-    .proxway__uppercase-text {
+    .velobike__uppercase-text {
         font-size: 18px;
         max-width: 350px;
     }
 
-    .proxway__info {
+    .velobike__info {
         padding: 16px 0;
         grid-template-columns: 1fr;
         gap: 16px;
     }
 
-    .proxway__thumbnail,
-    .proxway__problem-images,
-    .proxway__research-images {
+    .velobike__thumbnail,
+    .velobike__problem-scheme,
+    .velobike__research-images {
         padding: 16px;
-    }
-
-    .proxway__problem-content--03 {
-        .proxway__problem-image {
-            // 2-я картинка (наезжает на 1-ю, уходит вниз)
-            &:nth-child(2) {
-                margin-top: 80px;  // Сдвиг вниз
-            }
-
-            // 3-я картинка (наезжает на 2-ю, уходит еще ниже)
-            &:nth-child(3) {
-                margin-top: 160px; // Самый большой сдвиг вниз
-            }
-        }
     }
 
     .interface__block {
@@ -420,49 +364,21 @@
     .interface__block-subtitle {
         font-size: 14px;
     }
-
-    .interface__block-content--03 {
-        .interface__block-image {
-            // 2-я картинка (наезжает на 1-ю, уходит вниз)
-            &:nth-child(2) {
-                margin-top: 80px;  // Сдвиг вниз
-            }
-
-            // 3-я картинка (наезжает на 2-ю, уходит еще ниже)
-            &:nth-child(3) {
-                margin-top: 160px; // Самый большой сдвиг вниз
-            }
-        }
-    }
 }
 
 @media (max-width: 480px) {
-    .proxway__hero-container {
+    .velobike__hero-container {
         padding-top: 16px;
     }
 
-    .proxway__title {
+    .velobike__title {
         font-size: 28px;
     }
 
-    .proxway__problem-title, 
-    .proxway__research-title, 
-    .proxway__solution-title {
+    .velobike__problem-title, 
+    .velobike__research-title, 
+    .velobike__solution-title {
         font-size: 22px;
-    }
-
-    .proxway__problem-content--03 {
-        .proxway__problem-image {
-            // 2-я картинка (наезжает на 1-ю, уходит вниз)
-            &:nth-child(2) {
-                margin-top: 40px;  // Сдвиг вниз
-            }
-
-            // 3-я картинка (наезжает на 2-ю, уходит еще ниже)
-            &:nth-child(3) {
-                margin-top: 80px; // Самый большой сдвиг вниз
-            }
-        }
     }
 
     .interface__block-content--03 {

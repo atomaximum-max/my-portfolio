@@ -1,7 +1,7 @@
 @use "../../../styles/variables" as *;
 
 /* Hero */
-.proxway__hero-container {
+.transneft__hero-container {
     display: flex;
     flex-direction: column;
     gap: 64px;
@@ -9,12 +9,12 @@
     padding-bottom: 64px;
 }
 
-.proxway__top-content {
+.transneft__top-content {
     display: flex;
     justify-content: space-between;
 }
 
-.proxway__title {
+.transneft__title {
     max-width: 585px;
     font-family: $font-secondary;
     font-size: 46px;
@@ -22,8 +22,8 @@
     color: $white;
 }
 
-.proxway__uppercase-text {
-    max-width: 585px;
+.transneft__uppercase-text {
+    max-width: 615px;
     font-family: $font-primary;
     font-size: 32px;
     line-height: 130%;
@@ -35,7 +35,7 @@
     }
 }
 
-.proxway__info {
+.transneft__info {
     display: grid;
     grid-template-columns: auto auto auto auto; // все по ширине контента
     justify-content: space-between; // растягиваем по всей ширине
@@ -45,13 +45,13 @@
     border-bottom: 1px solid $border-dark;
 }
 
-.proxway__info-item {
+.transneft__info-item {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.proxway__info-label {
+.transneft__info-label {
     font-family: $font-primary;
     font-weight: 400;
     font-size: 16px;
@@ -59,7 +59,7 @@
     color: $gray;
 }
 
-.proxway__info-value {
+.transneft__info-value {
     font-family: $font-primary;
     font-weight: 400;
     font-size: 18px;
@@ -67,9 +67,9 @@
     color: $white;  
 }
 
-.proxway__thumbnail,
-.proxway__problem-images, 
-.proxway__research-images {
+.transneft__thumbnail,
+.transneft__problem-image, 
+.transneft__research-images {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,33 +79,33 @@
     border-radius: 16px;
 }
 
-.proxway__thumbnail-img {
+.transneft__thumbnail-img {
     width: 100%;          // ← занимает всю ширину родителя
     height: auto;          // ← сохраняет пропорции
     display: block;
 }
 
 /* Problem | Research | Solution */
-.proxway__problem-container,
-.proxway__research-container,
-.proxway__solution-container {
+.transneft__problem-container,
+.transneft__research-container,
+.transneft__solution-container {
     display: flex;
     flex-direction: column;
     gap: 64px;
     padding-bottom: 64px;
 }
 
-.proxway__problem-content,
-.proxway__research-content,
-.proxway__solution-content {
+.transneft__problem-content,
+.transneft__research-content,
+.transneft__solution-content {
     display: flex;
     justify-content: space-between;
     gap: 64px;
 }
 
-.proxway__problem-title,
-.proxway__research-title,
-.proxway__solution-title {
+.transneft__problem-title,
+.transneft__research-title,
+.transneft__solution-title {
     max-width: 585px;
     font-family: $font-secondary;
     font-size: 32px;
@@ -113,45 +113,45 @@
     color: $white;
 }
 
-.proxway__problem-wrapper,
-.proxway__research-wrapper,
-.proxway__solution-wrapper {
+.transneft__problem-wrapper,
+.transneft__research-wrapper,
+.transneft__solution-wrapper {
     max-width: 585px;
     display: flex;
     flex-direction: column;
     gap: 32px;
 }
 
-.proxway__problem-desc,
-.proxway__research-desc,
-.proxway__solution-desc {
+.transneft__problem-desc,
+.transneft__research-desc,
+.transneft__solution-desc {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.proxway__problem-text,
-.proxway__research-text,
-.proxway__solution-text {
+.transneft__problem-text,
+.transneft__research-text,
+.transneft__solution-text {
     font-family: inherit;
     font-weight: 300;
     font-size: 24px;
     line-height: 120%;
 }
 
-.proxway__problem-goals,
-.proxway__problem-role,
-.proxway__research-summary,
-.proxway__solution-result {
+.transneft__problem-goals,
+.transneft__problem-role,
+.transneft__research-summary,
+.transneft__solution-result {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.proxway__problem-goal-title,
-.proxway__problem-role-title,
-.proxway__research-summary-title,
-.proxway__solution-result-title {
+.transneft__problem-goal-title,
+.transneft__problem-role-title,
+.transneft__research-summary-title,
+.transneft__solution-result-title {
     font-family: $font-secondary;
     font-weight: 600;
     font-size: 20px;
@@ -161,10 +161,10 @@
     border-bottom: 1px solid $border-dark;
 }
 
-.proxway__problem-goal-text,
-.proxway__problem-role-text,
-.proxway__research-summary-item,
-.proxway__solution-result-text {
+.transneft__problem-goal-text,
+.transneft__problem-role-text,
+.transneft__research-summary-item,
+.transneft__solution-result-text {
     font-family: $font-primary;
     font-weight: 400;
     font-size: 16px;
@@ -172,12 +172,26 @@
     color: $white;
 }
 
-.proxway__problem-content--03 {
+.transneft__problem-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.transneft__research-summary-list {
+    list-style: disc;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.transneft__research-content--03 {
     display: flex;
     align-items: flex-start;
     width: 100%;
 
-    .proxway__problem-image {
+    .transneft__research-image {
         width: 70%; // Все картинки крупные
         height: auto;
         border-radius: 8px;
@@ -204,36 +218,6 @@
             position: relative;
             z-index: 3;
         }
-    }
-}
-
-.proxway__research-summary-list {
-    list-style: disc;
-    padding-left: 20px;
-     display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.proxway__research-content--02 {
-    display: flex;
-    gap: $gap-md;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: wrap;
-
-    .proxway__research-image {
-       width: 100%;
-       height: auto;
-       object-fit: contain;
-       display: block;
-       flex-shrink: 0;
-       border-radius: 8px;
-    }
-
-    .proxway__research-image:first-child:nth-last-child(2),
-    .proxway__research-image:first-child:nth-last-child(2) ~ .proxway__research-image {
-        max-width: calc(50% - $gap-md / 2);
     }
 }
 
@@ -321,90 +305,90 @@
 }
 
 @media (max-width: 1024px) {
-    .proxway__hero-container, 
-    .proxway__problem-container, 
-    .proxway__research-container,
-    .proxway__solution-container {
+    .transneft__hero-container, 
+    .transneft__problem-container, 
+    .transneft__research-container,
+    .transneft__solution-container {
         gap: 32px;
     }
 
-    .proxway__top-content {
+    .transneft__top-content {
         flex-direction: column;
         gap: 16px;
     }
 
-    .proxway__title {
+    .transneft__title {
         font-size: 32px;
     }
 
-    .proxway__uppercase-text {
+    .transneft__uppercase-text {
         font-size: 24px;
         max-width: 450px;
     }
 
-    .proxway__problem-content, 
-    .proxway__research-content, 
-    .proxway__solution-content {
+    .transneft__problem-content, 
+    .transneft__research-content, 
+    .transneft__solution-content {
         flex-direction: column;
         gap: 16px;
     }
 
-    .proxway__problem-wrapper, 
-    .proxway__research-wrapper, 
-    .proxway__solution-wrapper {
+    .transneft__problem-wrapper, 
+    .transneft__research-wrapper, 
+    .transneft__solution-wrapper {
         max-width: 100%;
     }
 
-    .proxway__problem-title, 
-    .proxway__research-title, 
-    .proxway__solution-title {
+    .transneft__problem-title, 
+    .transneft__research-title, 
+    .transneft__solution-title {
         font-size: 24px;
     }
 
-    .proxway__problem-goal-title, 
-    .proxway__problem-role-title, 
-    .proxway__research-summary-title, 
-    .proxway__solution-result-title {
+    .transneft__problem-goal-title, 
+    .transneft__problem-role-title, 
+    .transneft__research-summary-title, 
+    .transneft__solution-result-title {
         font-size: 18px;
     }
 
-    .proxway__problem-text, 
-    .proxway__research-text, 
-    .proxway__solution-text {
+    .transneft__problem-text, 
+    .transneft__research-text, 
+    .transneft__solution-text {
         font-size: 18px;
+    }
+
+    .transneft__research-content--03 {
+        .transneft__research-image {
+            // 2-я картинка (наезжает на 1-ю, уходит вниз)
+            &:nth-child(2) {
+                margin-top: 120px;  // Сдвиг вниз
+            }
+
+            // 3-я картинка (наезжает на 2-ю, уходит еще ниже)
+            &:nth-child(3) {
+                margin-top: 240px; // Самый большой сдвиг вниз
+            }
+        }
     }
 }
 
 @media (max-width: 768px) {
-    .proxway__uppercase-text {
+    .transneft__uppercase-text {
         font-size: 18px;
         max-width: 350px;
     }
 
-    .proxway__info {
+    .transneft__info {
         padding: 16px 0;
         grid-template-columns: 1fr;
         gap: 16px;
     }
 
-    .proxway__thumbnail,
-    .proxway__problem-images,
-    .proxway__research-images {
+    .transneft__thumbnail,
+    .transneft__problem-image,
+    .transneft__research-images {
         padding: 16px;
-    }
-
-    .proxway__problem-content--03 {
-        .proxway__problem-image {
-            // 2-я картинка (наезжает на 1-ю, уходит вниз)
-            &:nth-child(2) {
-                margin-top: 80px;  // Сдвиг вниз
-            }
-
-            // 3-я картинка (наезжает на 2-ю, уходит еще ниже)
-            &:nth-child(3) {
-                margin-top: 160px; // Самый большой сдвиг вниз
-            }
-        }
     }
 
     .interface__block {
@@ -420,62 +404,35 @@
     .interface__block-subtitle {
         font-size: 14px;
     }
-
-    .interface__block-content--03 {
-        .interface__block-image {
-            // 2-я картинка (наезжает на 1-ю, уходит вниз)
-            &:nth-child(2) {
-                margin-top: 80px;  // Сдвиг вниз
-            }
-
-            // 3-я картинка (наезжает на 2-ю, уходит еще ниже)
-            &:nth-child(3) {
-                margin-top: 160px; // Самый большой сдвиг вниз
-            }
-        }
-    }
 }
 
 @media (max-width: 480px) {
-    .proxway__hero-container {
+    .transneft__hero-container {
         padding-top: 16px;
     }
 
-    .proxway__title {
+    .transneft__title {
         font-size: 28px;
     }
 
-    .proxway__problem-title, 
-    .proxway__research-title, 
-    .proxway__solution-title {
+    .transneft__problem-title, 
+    .transneft__research-title, 
+    .transneft__solution-title {
         font-size: 22px;
     }
 
-    .proxway__problem-content--03 {
-        .proxway__problem-image {
+    .transneft__research-content--03 {
+        .transneft__research-image {
             // 2-я картинка (наезжает на 1-ю, уходит вниз)
             &:nth-child(2) {
-                margin-top: 40px;  // Сдвиг вниз
+                margin-top: 60px;  // Сдвиг вниз
             }
 
             // 3-я картинка (наезжает на 2-ю, уходит еще ниже)
             &:nth-child(3) {
-                margin-top: 80px; // Самый большой сдвиг вниз
+                margin-top: 120px; // Самый большой сдвиг вниз
             }
         }
     }
 
-    .interface__block-content--03 {
-        .interface__block-image {
-            // 2-я картинка (наезжает на 1-ю, уходит вниз)
-            &:nth-child(2) {
-                margin-top: 40px;  // Сдвиг вниз
-            }
-
-            // 3-я картинка (наезжает на 2-ю, уходит еще ниже)
-            &:nth-child(3) {
-                margin-top: 80px; // Самый большой сдвиг вниз
-            }
-        }
-    }
 }

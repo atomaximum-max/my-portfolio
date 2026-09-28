@@ -3,10 +3,14 @@ import { BackButton } from '../../components/ui/BackButton';
 
 import CollectaCase from './cases/CollectaCase';
 import ProxWayWebCase from './cases/ProxWayWebCase';
+import VelobikeCase from './cases/VelobikeCase';
+import TransneftCase from './cases/TransneftCase';
 
 const cases = {
   collecta: CollectaCase,
   proxway: ProxWayWebCase,
+  velobike: VelobikeCase,
+  transneft: TransneftCase,
 };
 
 export default function CasePage() {
