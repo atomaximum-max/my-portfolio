@@ -5,12 +5,14 @@ import CollectaCase from './cases/CollectaCase';
 import ProxWayWebCase from './cases/ProxWayWebCase';
 import VelobikeCase from './cases/VelobikeCase';
 import TransneftCase from './cases/TransneftCase';
+import SportRegionCase from './cases/SportRegionCase';
 
 const cases = {
   collecta: CollectaCase,
   proxway: ProxWayWebCase,
   velobike: VelobikeCase,
   transneft: TransneftCase,
+  sportregion: SportRegionCase,
 };
 
 export default function CasePage() {

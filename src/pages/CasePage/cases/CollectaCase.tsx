@@ -362,15 +362,16 @@ export default function CollectaCase() {
                             </motion.div>
                         </div>
                     </div>
+                    
                     <InterfaceBlock
                         number="01/"
                         title="Интерфейсы"
                         subtitle="Эффективный старт"
-                        className="interface__block"
+                        className="collecta__interface"
                     >
-                        <div className="interface__block-content">
-                            <img src={collectaInterface01L} alt="Начать работу" className="interface__block-image" />
-                            <img src={collectaInterface01R} alt="Быстрый старт" className="interface__block-image" />
+                        <div className="collecta__interface-content">
+                            <img src={collectaInterface01L} alt="Начать работу" className="collecta__interface-image" />
+                            <img src={collectaInterface01R} alt="Быстрый старт" className="collecta__interface-image" />
                         </div>     
                     </InterfaceBlock>
 
@@ -378,10 +379,10 @@ export default function CollectaCase() {
                         number="02/"
                         title="Интерфейсы"
                         subtitle="Информативный мониторинг"
-                        className="interface__block"
+                        className="collecta__interface"
                     >
-                        <div className="interface__block-content">
-                            <img src={collectaInterface02} alt="Мониторинг" className="interface__block-image" />
+                        <div className="collecta__interface-content">
+                            <img src={collectaInterface02} alt="Мониторинг" className="collecta__interface-image" />
                         </div>     
                     </InterfaceBlock>
 
@@ -389,13 +390,13 @@ export default function CollectaCase() {
                         number="03/"
                         title="Интерфейсы"
                         subtitle="Автоматизация решений"
-                        className="interface__block"
+                        className="collecta__interface"
                     >
-                        <div className="interface__block-content">
-                            <img src={collectaInterface03TL} alt="Автоматизация решений" className="interface__block-image" />
-                            <img src={collectaInterface03TR} alt="Автоматизация решений" className="interface__block-image" />
-                            <img src={collectaInterface03BL} alt="Автоматизация решений" className="interface__block-image" />
-                            <img src={collectaInterface03BR} alt="Автоматизация решений" className="interface__block-image" />
+                        <div className="collecta__interface-content">
+                            <img src={collectaInterface03TL} alt="Автоматизация решений" className="collecta__interface-image" />
+                            <img src={collectaInterface03TR} alt="Автоматизация решений" className="collecta__interface-image" />
+                            <img src={collectaInterface03BL} alt="Автоматизация решений" className="collecta__interface-image" />
+                            <img src={collectaInterface03BR} alt="Автоматизация решений" className="collecta__interface-image" />
                         </div>     
                     </InterfaceBlock>
 
@@ -403,10 +404,10 @@ export default function CollectaCase() {
                         number="04/"
                         title="Интерфейсы"
                         subtitle="Глубокая аналитика"
-                        className="interface__block"
+                        className="collecta__interface"
                     >
-                        <div className="interface__block-content">
-                            <img src={collectaInterface04} alt="Аналитика" className="interface__block-image" />
+                        <div className="collecta__interface-content">
+                            <img src={collectaInterface04} alt="Аналитика" className="collecta__interface-image" />
                         </div>     
                     </InterfaceBlock>
 
@@ -414,10 +415,10 @@ export default function CollectaCase() {
                         number="05/"
                         title="Интерфейсы"
                         subtitle="Интеллектуальный помощник"
-                        className="interface__block"
+                        className="collecta__interface"
                     >
-                        <div className="interface__block-content">
-                            <img src={collectaInterface05} alt="Интеллектуальный помощник" className="interface__block-image" />
+                        <div className="collecta__interface-content">
+                            <img src={collectaInterface05} alt="Интеллектуальный помощник" className="collecta__interface-image" />
                         </div> 
                     </InterfaceBlock>
                         
@@ -425,12 +426,12 @@ export default function CollectaCase() {
                         number="06/"
                         title="Интерфейсы"
                         subtitle="Гибкая настройка"
-                        className="interface__block"
+                        className="collecta__interface"
                     >
-                        <div className="interface__block-content--03">
-                            <img src={collectaInterface06T} alt="Настройка" className="interface__block-image" />
-                            <img src={collectaInterface06M} alt="Настройка" className="interface__block-image" />
-                            <img src={collectaInterface06B} alt="Настройка" className="interface__block-image" />
+                        <div className="collecta__interface-content--03">
+                            <img src={collectaInterface06T} alt="Настройка" className="collecta__interface-image" />
+                            <img src={collectaInterface06M} alt="Настройка" className="collecta__interface-image" />
+                            <img src={collectaInterface06B} alt="Настройка" className="collecta__interface-image" />
                         </div>     
                     </InterfaceBlock>
                 </div>               

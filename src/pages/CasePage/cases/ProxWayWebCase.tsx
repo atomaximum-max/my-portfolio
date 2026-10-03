@@ -285,10 +285,10 @@ export default function ProxWayWebCase() {
                         number="01/"
                         title="Интерфейсы"
                         subtitle="Масштаб системы"
-                        className="interface__block"
+                        className="proxway__interface"
                     >
-                        <div className="interface__block-content">
-                            <img src={proxwayInterface01} alt="Масштаб системы" className="interface__block-image" />
+                        <div className="proxway__interface-content">
+                            <img src={proxwayInterface01} alt="Масштаб системы" className="proxway__interface-image" />
                         </div>     
                     </InterfaceBlock>
 
@@ -296,12 +296,12 @@ export default function ProxWayWebCase() {
                         number="02/"
                         title="Интерфейсы"
                         subtitle="Комплексное управление"
-                        className="interface__block"
+                        className="proxway__interface"
                     >
-                        <div className="interface__block-content--03">
-                            <img src={proxwayInterface02T} alt="Управление" className="interface__block-image" />
-                            <img src={proxwayInterface02M} alt="Управление" className="interface__block-image" />
-                            <img src={proxwayInterface02B} alt="Управление" className="interface__block-image" />
+                        <div className="proxway__interface-content--03">
+                            <img src={proxwayInterface02T} alt="Управление" className="proxway__interface-image" />
+                            <img src={proxwayInterface02M} alt="Управление" className="proxway__interface-image" />
+                            <img src={proxwayInterface02B} alt="Управление" className="proxway__interface-image" />
                         </div>    
                     </InterfaceBlock>
 
@@ -309,10 +309,10 @@ export default function ProxWayWebCase() {
                         number="03/"
                         title="Интерфейсы"
                         subtitle="Работа с сущностями"
-                        className="interface__block"
+                        className="proxway__interface"
                     >
-                        <div className="interface__block-content">
-                            <img src={proxwayInterface03} alt="Работа с сущностями" className="interface__block-image" />
+                        <div className="proxway__interface-content">
+                            <img src={proxwayInterface03} alt="Работа с сущностями" className="proxway__interface-image" />
                         </div>     
                     </InterfaceBlock>
 
@@ -320,13 +320,13 @@ export default function ProxWayWebCase() {
                         number="04/"
                         title="Интерфейсы"
                         subtitle="Управление персоналом"
-                        className="interface__block"
+                        className="proxway__interface"
                     >
-                        <div className="interface__block-content">
-                            <img src={proxwayInterface03TL} alt="Управление персоналом" className="interface__block-image" />
-                            <img src={proxwayInterface03TR} alt="Управление персоналом" className="interface__block-image" />
-                            <img src={proxwayInterface03BL} alt="Управление персоналом" className="interface__block-image" />
-                            <img src={proxwayInterface03BR} alt="Управление персоналом" className="interface__block-image" />  
+                        <div className="proxway__interface-content">
+                            <img src={proxwayInterface03TL} alt="Управление персоналом" className="proxway__interface-image" />
+                            <img src={proxwayInterface03TR} alt="Управление персоналом" className="proxway__interface-image" />
+                            <img src={proxwayInterface03BL} alt="Управление персоналом" className="proxway__interface-image" />
+                            <img src={proxwayInterface03BR} alt="Управление персоналом" className="proxway__interface-image" />  
                         </div>     
                     </InterfaceBlock>
 
@@ -334,11 +334,11 @@ export default function ProxWayWebCase() {
                         number="05/"
                         title="Интерфейсы"
                         subtitle="Центр пропусков"
-                        className="interface__block"
+                        className="proxway__interface"
                     >
-                        <div className="interface__block-content">
-                            <img src={proxwayInterface05L} alt="Центр пропусков: Персонал" className="interface__block-image" />
-                            <img src={proxwayInterface05R} alt="Центр пропусков: Посетители" className="interface__block-image" />
+                        <div className="proxway__interface-content">
+                            <img src={proxwayInterface05L} alt="Центр пропусков: Персонал" className="proxway__interface-image" />
+                            <img src={proxwayInterface05R} alt="Центр пропусков: Посетители" className="proxway__interface-image" />
                         </div> 
                     </InterfaceBlock>
                         
@@ -346,10 +346,10 @@ export default function ProxWayWebCase() {
                         number="06/"
                         title="Интерфейсы"
                         subtitle="Система отчётности"
-                        className="interface__block"
+                        className="proxway__interface"
                     >
-                        <div className="interface__block-content">
-                            <img src={proxwayInterface06} alt="Отчёты" className="interface__block-image" />
+                        <div className="proxway__interface-content">
+                            <img src={proxwayInterface06} alt="Отчёты" className="proxway__interface-image" />
                         </div>    
                     </InterfaceBlock>
                 </div>               

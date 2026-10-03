@@ -35,3 +35,14 @@
     line-height: 120%;
     color: $gray;
 }
+
+@media (max-width: 768px) {
+    .interface__block-number,
+    .interface__block-title {
+        font-size: 18px;
+    }
+
+    .interface__block-subtitle {
+        font-size: 14px;
+    }
+}

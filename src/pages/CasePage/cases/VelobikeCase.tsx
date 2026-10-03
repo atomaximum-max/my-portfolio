@@ -270,10 +270,10 @@ export default function VelobikeCase() {
                         number="01/"
                         title="Интерфейсы"
                         subtitle="Карточка клиента"
-                        className="interface__block"
+                        className="velobike__interface"
                     >
-                        <div className="interface__block-content">
-                            <img src={velobikeInterface01} alt="Карточка клиента" className="interface__block-image" />
+                        <div className="velobike__interface-content">
+                            <img src={velobikeInterface01} alt="Карточка клиента" className="velobike__interface-image" />
                         </div>     
                     </InterfaceBlock>
 
@@ -281,10 +281,10 @@ export default function VelobikeCase() {
                         number="02/"
                         title="Интерфейсы"
                         subtitle="Покупки"
-                        className="interface__block"
+                        className="velobike__interface"
                     >
-                        <div className="interface__block-content">
-                            <img src={velobikeInterface02} alt="Карточка покупки" className="interface__block-image" />
+                        <div className="velobike__interface-content">
+                            <img src={velobikeInterface02} alt="Карточка покупки" className="velobike__interface-image" />
                         </div>    
                     </InterfaceBlock>
 
@@ -292,10 +292,10 @@ export default function VelobikeCase() {
                         number="03/"
                         title="Интерфейсы"
                         subtitle="Штрафы"
-                        className="interface__block"
+                        className="velobike__interface"
                     >
-                        <div className="interface__block-content">
-                            <img src={velobikeInterface03} alt="Штрафы" className="interface__block-image" />
+                        <div className="velobike__interface-content">
+                            <img src={velobikeInterface03} alt="Штрафы" className="velobike__interface-image" />
                         </div>     
                     </InterfaceBlock>
 
@@ -303,10 +303,10 @@ export default function VelobikeCase() {
                         number="04/"
                         title="Интерфейсы"
                         subtitle="Страховой полис"
-                        className="interface__block"
+                        className="velobike__interface"
                     >
-                        <div className="interface__block-content">
-                            <img src={velobikeInterface04} alt="Страховой полис" className="interface__block-image" />  
+                        <div className="velobike__interface-content">
+                            <img src={velobikeInterface04} alt="Страховой полис" className="velobike__interface-image" />  
                         </div>     
                     </InterfaceBlock>
 
@@ -314,10 +314,10 @@ export default function VelobikeCase() {
                         number="05/"
                         title="Интерфейсы"
                         subtitle="Журнал аренд"
-                        className="interface__block"
+                        className="velobike__interface"
                     >
-                        <div className="interface__block-content">
-                            <img src={velobikeInterface05} alt="Журнал аренд" className="interface__block-image" />
+                        <div className="velobike__interface-content">
+                            <img src={velobikeInterface05} alt="Журнал аренд" className="velobike__interface-image" />
                         </div> 
                     </InterfaceBlock>
                         
@@ -325,10 +325,10 @@ export default function VelobikeCase() {
                         number="06/"
                         title="Интерфейсы"
                         subtitle="Промоакции"
-                        className="interface__block"
+                        className="velobike__interface"
                     >
-                        <div className="interface__block-content">
-                            <img src={velobikeInterface06} alt="Промоакции" className="interface__block-image" />
+                        <div className="velobike__interface-content">
+                            <img src={velobikeInterface06} alt="Промоакции" className="velobike__interface-image" />
                         </div>    
                     </InterfaceBlock>
                 </div>               

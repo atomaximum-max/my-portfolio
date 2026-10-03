@@ -38,8 +38,16 @@
 
 .hero__avatar-card {
     display: flex;
-    align-items: center;
     gap: 16px;
+}
+
+.hero__img {
+    position: absolute;    
+    inset: 0;
+    z-index: 1;
+    opacity: 0.7;
+    pointer-events: none;
+    overflow: hidden;
 }
 
 .hero__avatar {
@@ -68,15 +76,23 @@
     max-width: 250px;
     font-size: 14px;
     color: $gray;
+    margin-bottom: 16px;
 }
 
-.hero__img {
-    position: absolute;    
-    inset: 0;
-    z-index: 1;
-    opacity: 0.7;
-    pointer-events: none;
-    overflow: hidden;
+.hero__download-link {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    color: $gray;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $yellow-green;
+        opacity: 1;
+    }
 }
 
 .hero__spline {
@@ -89,25 +105,6 @@
     transform: translate(-50%, -50%);
 }
 
-/*.hero__img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    transform: translate(-50%, -50%);
-    opacity: 0.7;
-    overflow: visible;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-
-    &:hover {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1.05);
-    }    
-}
-*/
 .hero__cta {
     position: relative;
     display: flex;
@@ -244,7 +241,7 @@
 }
 
 .cases__more-btn {
-    display: none;
+    display: block;
     padding: 8px 24px;
     width: 180px;
     height: 40px;
@@ -479,6 +476,19 @@
         &-desc {
             font-size: 12px;
         }
+    }
+
+    .hero__avatar-desc {
+        margin-bottom: 8px;
+    }
+
+    .hero__download-link {
+        font-size: 14px;
+    }
+
+    .hero__download-link svg {
+        width: 20px;
+        height: 20px;
     }
 
     .hero__spline {

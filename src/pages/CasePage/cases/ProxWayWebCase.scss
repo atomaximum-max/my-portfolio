@@ -238,7 +238,7 @@
 }
 
 /* Interfaces */
-.interface__block {
+.proxway__interface {
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -250,14 +250,14 @@
     padding: 32px;
 }
 
-.interface__block-content {
+.proxway__interface-content {
     display: flex;
     gap: $gap-md;
     justify-content: center;
     align-items: stretch;
     flex-wrap: wrap;
 
-    .interface__block-image {
+    .proxway__interface-image {
        width: 100%;
        height: auto;
        object-fit: contain;
@@ -267,29 +267,29 @@
     }
 
     // 1 картинка
-    .interface__block-image:only-child {
+    .proxway__interface-image:only-child {
         max-width: 100%;
     }
 
     // 2 картинки
-    .interface__block-image:first-child:nth-last-child(2),
-    .interface__block-image:first-child:nth-last-child(2) ~ .interface__block-image {
+    .proxway__interface-image:first-child:nth-last-child(2),
+    .proxway__interface-image:first-child:nth-last-child(2) ~ .proxway__interface-image {
         max-width: calc(50% - $gap-md / 2);
     }
 
     // 4 картинки
-    .interface__block-image:first-child:nth-last-child(4),
-    .interface__block-image:first-child:nth-last-child(4) ~ .interface__block-image {
+    .proxway__interface-image:first-child:nth-last-child(4),
+    .proxway__interface-image:first-child:nth-last-child(4) ~ .proxway__interface-image {
         max-width: calc(50% - $gap-md / 2);
     }
 }
 
-.interface__block-content--03 {
+.proxway__interface-content--03 {
     display: flex;
     align-items: flex-start;
     width: 100%;
 
-    .interface__block-image {
+    .proxway__interface-image {
         width: 70%; // Все картинки крупные
         height: auto;
         border-radius: 8px;
@@ -373,6 +373,20 @@
     .proxway__solution-text {
         font-size: 18px;
     }
+
+    .proxway__problem-content--03 {
+        .proxway__problem-image {
+            // 2-я картинка (наезжает на 1-ю, уходит вниз)
+            &:nth-child(2) {
+                margin-top: 120px;  // Сдвиг вниз
+            }
+
+            // 3-я картинка (наезжает на 2-ю, уходит еще ниже)
+            &:nth-child(3) {
+                margin-top: 240px; // Самый большой сдвиг вниз
+            }
+        }
+    }
 }
 
 @media (max-width: 768px) {
@@ -393,6 +407,10 @@
         padding: 16px;
     }
 
+    .proxway__research-content--02 {
+        gap: 8px;
+    }
+
     .proxway__problem-content--03 {
         .proxway__problem-image {
             // 2-я картинка (наезжает на 1-ю, уходит вниз)
@@ -407,22 +425,17 @@
         }
     }
 
-    .interface__block {
+    .proxway__interface {
         padding: 16px;
         gap: 16px;
     }
 
-    .interface__block-number,
-    .interface__block-title {
-        font-size: 18px;
+    .proxway__interface-content {
+        gap: 8px;
     }
 
-    .interface__block-subtitle {
-        font-size: 14px;
-    }
-
-    .interface__block-content--03 {
-        .interface__block-image {
+    .proxway__interface-content--03 {
+        .proxway__interface-image {
             // 2-я картинка (наезжает на 1-ю, уходит вниз)
             &:nth-child(2) {
                 margin-top: 80px;  // Сдвиг вниз
@@ -465,8 +478,8 @@
         }
     }
 
-    .interface__block-content--03 {
-        .interface__block-image {
+    .proxway__interface-content--03 {
+        .proxway__interface-image {
             // 2-я картинка (наезжает на 1-ю, уходит вниз)
             &:nth-child(2) {
                 margin-top: 40px;  // Сдвиг вниз

@@ -2,6 +2,8 @@ import collectaImage from '../assets/img/Collecta.jpg';
 import proxwayImage from '../assets/img/ProxWay.jpg';
 import velobikeImage from '../assets/img/Velobike.jpg';
 import transneftImage from '../assets/img/Transneft.jpg';
+import sportregionImage from '../assets/img/Sport-Region.jpg';
+import geofocusImage from '../assets/img/Geofocus.jpg';
 
 export interface CaseData {
   id: string;
@@ -44,6 +46,22 @@ export const casesData: CaseData[] = [
     description: 'Проектирование корпоративной информационной системы личного кабинета контрагента для обеспечения взаимодействия с учётными сервисами',
     image: transneftImage,
     link: '/case/transneft',
+  },
+  {
+    id: 'sport-region',
+    year: '2023-2024',
+    title: 'Информационный портал «Sport-Region»',
+    description: 'UX/UI дизайн информационного портала для городских умных спортивных комплексов с доступом по QR-коду и админ-кабинетом для управления контентом',
+    image: sportregionImage,
+    link: '/case/sport-region',
+  },
+  {
+    id: 'geofocus',
+    year: '2022-2023',
+    title: 'Система мониторинга «Geofocus»',
+    description: 'Разработка современного отечественного решения для контроля местоположения персонала и активов на производстве в режиме реального времени',
+    image: geofocusImage,
+    link: '/case/geofocus',
   },
 ];
 

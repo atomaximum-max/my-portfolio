@@ -24,6 +24,7 @@ import gitIcon from "../../assets/img/git.svg";
 import projectIcon from "../../assets/img/project.svg";
 import jiraIcon from "../../assets/img/jira.svg";
 import confluenceIcon from "../../assets/img/confluence.svg";
+import resumePdf from "../../assets/doc/CV - Барманов Максим Игоревич.pdf";
 
 import "./HomePage.scss";
 
@@ -96,7 +97,23 @@ export default function HomePage() {
                             <div className="hero__avatar-desc">
                                 Product Design Lead | UX Engineer | Design-to-Code Specialist
                             </div>
-                        </motion.div>
+                            <motion.a 
+                                href={resumePdf} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="hero__download-link"
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 1.5 }}
+                            >
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.44 8.90002C20.04 9.21002 21.51 11.06 21.51 15.11V15.24C21.51 19.71 19.72 21.5 15.25 21.5H8.74C4.27 21.5 2.48 19.71 2.48 15.24V15.11C2.48 11.09 3.93 9.24002 7.47 8.91002" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M12 2V14.88" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M15.35 12.65L12 16L8.64999 12.65" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                                <span>Скачать CV</span> 
+                            </motion.a>
+                        </motion.div>               
                     </motion.div>
                 </div>
                 <HeroSpline />
@@ -235,8 +252,9 @@ export default function HomePage() {
             <div className="container cases__container">
                 <h2 className="cases__title">Кейсы</h2>
                 {/* ← СПИСОК КЕЙСОВ ИЗ МАССИВА */}
+                {/* Первые 4 карточки — всегда в DOM, анимация проигрывается один раз */}
                 <div className="cases__grid">
-                    {casesData.slice(0, showMoreCases ? casesData.length : 4).map((caseItem, index) => (
+                    {casesData.slice(0, 4).map((caseItem, index) => (
                         <CaseCard
                             key={caseItem.id}
                             year={caseItem.year}
@@ -246,15 +264,42 @@ export default function HomePage() {
                             link={caseItem.link}
                             index={index}
                         />
-                    ))}     
+                    ))}
                 </div>
-                <Button
-                    variant="primary"
-                    expandBlock={toggleCases}
-                    className="cases__more-btn"
+
+                {/* Дополнительные — рендерятся только при раскрытии */}
+                {showMoreCases && (
+                    <div className="cases__grid cases__grid--extra">
+                        {casesData.slice(4).map((caseItem, index) => (
+                            <CaseCard
+                                key={caseItem.id}
+                                year={caseItem.year}
+                                title={caseItem.title}
+                                description={caseItem.description}
+                                image={caseItem.image}
+                                link={caseItem.link}
+                                index={index} // delay пойдёт с 0, чтобы новая партия появлялась последовательно
+                            />
+                        ))}
+                    </div>
+                )}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.8 }}
+                    transition={{ 
+                        duration: 0.6, 
+                        ease: "easeOut", 
+                    }}
                 >
-                    {showMoreCases ? 'Скрыть кейсы' : 'Ещё кейсы'}
-                </Button>
+                    <Button
+                        variant="primary"
+                        expandBlock={toggleCases}
+                        className="cases__more-btn"
+                    >
+                        {showMoreCases ? 'Скрыть кейсы' : 'Ещё кейсы'}
+                    </Button>
+                </motion.div>
             </div>
         </section>
 

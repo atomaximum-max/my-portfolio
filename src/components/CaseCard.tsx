@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+
 import './CaseCard.scss';
 
 interface CaseCardProps {
@@ -29,16 +30,14 @@ const CaseCard: React.FC<CaseCardProps> = ({
       className="case-card"
       initial={{ 
           opacity: 0, 
-          x: index % 2 === 0 ? -80 : 80, 
-          y: 40 
+          x: index % 2 === 0 ? -120 : 120, 
       }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
       transition={{ 
-          x: { duration: 0.5, ease: "linear" },
-          y: { duration: 0.5, ease: "linear" },
-          opacity: { duration: 0.3, ease: "linear" },
-          delay: index * 0.1
+        x: { duration: 0.5, ease: "easeOut" },
+        opacity: { duration: 0.3, ease: "easeOut" },
+        delay: index * 0.12
       }}
     >
       <div className="case-card__image">

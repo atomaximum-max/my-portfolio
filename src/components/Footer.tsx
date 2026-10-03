@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.6, ease: "linear", delay: 0.5 }}
         >
-          <p>© 2026 Все права защищены</p>
+          <p>© 2026 Все права защищены. Дизайн и код сделан собственоручно.</p>
         </motion.div>
       </div>
     </footer>
