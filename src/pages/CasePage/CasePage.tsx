@@ -6,6 +6,7 @@ import ProxWayWebCase from './cases/ProxWayWebCase';
 import VelobikeCase from './cases/VelobikeCase';
 import TransneftCase from './cases/TransneftCase';
 import SportRegionCase from './cases/SportRegionCase';
+import GeofocusCase from './cases/GeofocusCase';
 
 const cases = {
   collecta: CollectaCase,
@@ -13,6 +14,7 @@ const cases = {
   velobike: VelobikeCase,
   transneft: TransneftCase,
   sportregion: SportRegionCase,
+  geofocus: GeofocusCase,
 };
 
 export default function CasePage() {

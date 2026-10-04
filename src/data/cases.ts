@@ -48,12 +48,12 @@ export const casesData: CaseData[] = [
     link: '/case/transneft',
   },
   {
-    id: 'sport-region',
+    id: 'sportregion',
     year: '2023-2024',
     title: 'Информационный портал «Sport-Region»',
     description: 'UX/UI дизайн информационного портала для городских умных спортивных комплексов с доступом по QR-коду и админ-кабинетом для управления контентом',
     image: sportregionImage,
-    link: '/case/sport-region',
+    link: '/case/sportregion',
   },
   {
     id: 'geofocus',

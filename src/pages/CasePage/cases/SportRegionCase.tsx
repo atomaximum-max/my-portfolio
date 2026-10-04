@@ -1,80 +1,83 @@
 import { InterfaceBlock } from '../../../components/InterfaceBlock';
 import { motion } from "motion/react";
 
-import transneftThumbnail from '../../../assets/img/Transneft-thumbnail.png';
-import transneftProblemImage from "../../../assets/img/Transneft-problem-Image.png";
-import transneftResearchImage01 from "../../../assets/img/Transneft-research-Image-1.png";
-import transneftResearchImage02 from "../../../assets/img/Transneft-research-Image-2.png";
-import transneftResearchImage03 from "../../../assets/img/Transneft-research-Image-3.png";
-import transneftInterface01TL from "../../../assets/img/Transneft-interface-1.png";
-import transneftInterface01TR from "../../../assets/img/Transneft-interface-2.png";
-import transneftInterface01BL from "../../../assets/img/Transneft-interface-3.png";
-import transneftInterface01BR from "../../../assets/img/Transneft-interface-4.png";
-import transneftInterface02 from "../../../assets/img/Transneft-interface-5.png";
-import transneftInterface03 from "../../../assets/img/Transneft-interface-6.png";
-import transneftInterface04 from "../../../assets/img/Transneft-interface-7.png";
-import transneftInterface05 from "../../../assets/img/Transneft-interface-8.png";
-import transneftInterface06L from "../../../assets/img/Transneft-interface-9.png";
-import transneftInterface06R from "../../../assets/img/Transneft-interface-10.png";
+import sportRegionThumbnail from '../../../assets/img/Sport-region-thumbnail.png';
+import sportRegionProblemImage from "../../../assets/img/Sport-region-problem-Image.png";
+import sportRegionResearchImage from "../../../assets/img/Sport-region-research-Image.png";
+import sportRegionInterface01TL from "../../../assets/img/Sport-region-interface-1.png";
+import sportRegionInterface01TR from "../../../assets/img/Sport-region-interface-2.png";
+import sportRegionInterface01BL from "../../../assets/img/Sport-region-interface-3.png";
+import sportRegionInterface01BR from "../../../assets/img/Sport-region-interface-4.png";
+import sportRegionInterface02L from "../../../assets/img/Sport-region-interface-5.png";
+import sportRegionInterface02R from "../../../assets/img/Sport-region-interface-6.png";
+import sportRegionInterface03 from "../../../assets/img/Sport-region-interface-7.png";
+import sportRegionInterface04 from "../../../assets/img/Sport-region-interface-8.png";
+import sportRegionInterface05TL from "../../../assets/img/Sport-region-interface-9.png";
+import sportRegionInterface05TR from "../../../assets/img/Sport-region-interface-10.png";
+import sportRegionInterface05BL from "../../../assets/img/Sport-region-interface-11.png";
+import sportRegionInterface05BR from "../../../assets/img/Sport-region-interface-12.png";
+import sportRegionInterface06T from "../../../assets/img/Sport-region-interface-13.png";
+import sportRegionInterface06M from "../../../assets/img/Sport-region-interface-14.png";
+import sportRegionInterface06B from "../../../assets/img/Sport-region-interface-15.png"; 
 
-import './TransneftCase.scss';
+import './SportRegionCase.scss';
 
-export default function TransneftCase() {
+export default function SportRegionCase() {
     return (
         <>
-            <section className="transneft__hero">
-                <div className="container transneft__hero-container">
-                    <div className="transneft__top-content">
+            <section className="sportregion__hero">
+                <div className="container sportregion__hero-container">
+                    <div className="sportregion__top-content">
                         <motion.h1 
-                            className="transneft__title"
+                            className="sportregion__title"
                             initial={{ opacity: 0, x: -80 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, ease: "linear" }}
                         >
-                            КИС ЛКК
+                            “Sport-region”
                         </motion.h1>
                         <motion.p 
-                            className="transneft__uppercase-text"
+                            className="sportregion__uppercase-text"
                             initial={{ opacity: 0, x: 80 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, ease: "linear", delay: 0.2 }}
                         >
-                            Корпоративная информационная система личного кабинета контрагента 
+                            Информационный портал для&nbsp;городских умных спортивных комплексов 
                         </motion.p>
                     </div>
 
                     {/* Информационные строки */}
                     <motion.div 
-                        className="transneft__info"
+                        className="sportregion__info"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.6 }}
                         transition={{ duration: 1, ease: "linear" }}
                     >
-                        <div className="transneft__info-item">
-                            <span className="transneft__info-label">Период</span>
-                            <span className="transneft__info-value">2022-2024</span>
+                        <div className="sportregion__info-item">
+                            <span className="sportregion__info-label">Период</span>
+                            <span className="sportregion__info-value">2023-2024</span>
                         </div>
-                        <div className="transneft__info-item">
-                            <span className="transneft__info-label">Заказчик</span>
-                            <span className="transneft__info-value">ПАО "Транснефть"</span>
+                        <div className="sportregion__info-item">
+                            <span className="sportregion__info-label">Заказчик</span>
+                            <span className="sportregion__info-value">АО "Ситроникс"</span>
                         </div>
-                        <div className="transneft__info-item">
-                            <span className="transneft__info-label">Сфера</span>
-                            <span className="transneft__info-value">Нефтедобывающая</span>
+                        <div className="sportregion__info-item">
+                            <span className="sportregion__info-label">Сфера</span>
+                            <span className="sportregion__info-value">Спорт</span>
                         </div>
-                        <div className="transneft__info-item">
-                            <span className="transneft__info-label">Роль</span>
-                            <span className="transneft__info-value">UX/UI дизайнер</span>
+                        <div className="sportregion__info-item">
+                            <span className="sportregion__info-label">Роль</span>
+                            <span className="sportregion__info-value">Lead UX/UI дизайнер</span>
                         </div>
                     </motion.div>
 
                     {/* ← ОБЛОЖКА КЕЙСА */}
-                    <div className="transneft__thumbnail">
+                    <div className="sportregion__thumbnail">
                         <motion.img 
-                            src={transneftThumbnail} 
-                            alt="Transneft Thumbnail" 
-                            className="transneft__thumbnail-img"
+                            src={sportRegionThumbnail} 
+                            alt="Sport-region Thumbnail" 
+                            className="sportregion__thumbnail-img"
                             initial={{ scale: 0, opacity: 0 }}
                             whileInView={{ scale: 1, opacity: 1 }}
                             viewport={{ once: true, amount: 0.5 }}
@@ -86,11 +89,11 @@ export default function TransneftCase() {
                     </div>
                 </div>
             </section>
-            <section className="transneft__problem">
-                <div className="container transneft__problem-container">
-                    <div className="transneft__problem-content">
+            <section className="sportregion__problem">
+                <div className="container sportregion__problem-container">
+                    <div className="sportregion__problem-content">
                         <motion.h2 
-                            className="transneft__problem-title"
+                            className="sportregion__problem-title"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3, margin: "0px 0px -50px 0px" }}
@@ -98,59 +101,59 @@ export default function TransneftCase() {
                         >
                             Проблема
                         </motion.h2>
-                        <div className="transneft__problem-wrapper">
+                        <div className="sportregion__problem-wrapper">
                             <motion.div 
-                                className="transneft__problem-desc"
+                                className="sportregion__problem-desc"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
                                 transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
                             >
-                                <p className="transneft__problem-text">
-                                    Взаимодействие ПАО «Транснефть» с&nbsp;контрагентами включало большое количество участников, ролей и&nbsp;рабочих процессов. 
+                                <p className="sportregion__problem-text">
+                                    Посетители спорткомплексов не&nbsp;имели единой точки входа в&nbsp;цифровые сервисы. Доступ, расписание, информация о&nbsp;тренажёрах и&nbsp;правила безопасности были разрознены и&nbsp;требовали участия администратора на&nbsp;ресепшене. 
                                 </p>
-                                <p className="transneft__problem-text">
-                                    Для разных категорий пользователей требовался единый цифровой инструмент, который учитывал бы специфику их задач и&nbsp;обеспечивал понятное взаимодействие с&nbsp;необходимой информацией и&nbsp;функциями.
+                                <p className="sportregion__problem-text">
+                                    У администраторов и&nbsp;контент-менеджеров не&nbsp;было инструмента, чтобы централизованно управлять информацией и&nbsp;доступом посетителей.
                                 </p>
                             </motion.div>
                             <motion.div 
-                                className="transneft__problem-goals"
+                                className="sportregion__problem-goals"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
                                 transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
                             >
-                                <h3 className="transneft__problem-goal-title">
+                                <h3 className="sportregion__problem-goal-title">
                                     Цели проекта
                                 </h3>
-                                <p className="transneft__problem-goal-text"> 
-                                    Спроектировать понятный и&nbsp;масштабируемый интерфейс личного кабинета, адаптированный под разные роли и&nbsp;пользовательские сценарии. Выстроить навигацию, структуру информации и&nbsp;рабочие процессы так, чтобы пользователи могли эффективно выполнять свои задачи в&nbsp;рамках единой системы.
+                                <p className="sportregion__problem-goal-text"> 
+                                    Разработать информационный портал с&nbsp;доступом в&nbsp;комплексы по&nbsp;QR-коду. Дать посетителю актуальное расписание, информацию о&nbsp;тренажёрах, инструкции и&nbsp;технику безопасности в&nbsp;одном месте. Создать административный кабинет для управления контентом портала.
                                 </p>
                             </motion.div>
                             <motion.div 
-                                className="transneft__problem-role"
+                                className="sportregion__problem-role"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
                                 transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
                             >
-                                <h3 className="transneft__problem-role-title">
+                                <h3 className="sportregion__problem-role-title">
                                     Моя роль
                                 </h3>
-                                <p className="transneft__problem-role-text"> 
-                                    Работал над проектом на&nbsp;всём этапе UX/UI-дизайна: от анализа требований и&nbsp;проработки пользовательских сценариев до&nbsp;проектирования интерфейсов и&nbsp;подготовки решений к&nbsp;разработке.
+                                <p className="sportregion__problem-role-text"> 
+                                    Как Lead UX/UI дизайнер отвечал за&nbsp;UX-проработку, информационную архитектуру, пользовательские сценарии и&nbsp;проектирование интерфейсов портала и&nbsp;админ-кабинета. 
                                 </p>
-                                <p className="transneft__problem-role-text"> 
-                                    Начинал работу на&nbsp;проекте, как UX/UI дизайнер, впоследствии стал Lead UX/UI Designer. Отвечал за&nbsp;UX-проработку, информационную архитектуру, User Flow, прототипирование, UI-дизайн и&nbsp;развитие интерфейсов системы.
+                                <p className="sportregion__problem-role-text"> 
+                                    Курировал работу дизайнеров, проводил дизайн-ревью и&nbsp;дейлики, помогал реализовать дизайн-систему и&nbsp;макеты, осуществлял контроль качества решений от&nbsp;идеи до&nbsp;передачи в&nbsp;разработку.
                                 </p>
                             </motion.div>
                         </div>
                     </div>
-                    <div className="transneft__problem-image">
+                    <div className="sportregion__problem-image">
                         <motion.img 
-                            src={transneftProblemImage} 
-                            alt="Transneft Problem Image" 
-                            className="transneft__problem-img"
+                            src={sportRegionProblemImage} 
+                            alt="Sport-region Problem Image" 
+                            className="sportregion__problem-img"
                             initial={{ scale: 0, opacity: 0 }}
                             whileInView={{ scale: 1, opacity: 1 }}
                             viewport={{ once: true, amount: 0.5 }}
@@ -162,11 +165,11 @@ export default function TransneftCase() {
                     </div>
                 </div>
             </section>
-            <section className="transneft__research">
-                <div className="container transneft__research-container">
-                    <div className="transneft__research-content">
+            <section className="sportregion__research">
+                <div className="container sportregion__research-container">
+                    <div className="sportregion__research-content">
                         <motion.h2 
-                            className="transneft__research-title"
+                            className="sportregion__research-title"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3, margin: "0px 0px -50px 0px" }}
@@ -174,71 +177,75 @@ export default function TransneftCase() {
                         >
                             Исследование
                         </motion.h2>
-                        <div className="transneft__research-wrapper">
+                        <div className="sportregion__research-wrapper">
                             <motion.div 
-                                className="transneft__research-desc"
+                                className="sportregion__research-desc"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
                                 transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
                             >
-                                <p className="transneft__research-text">
-                                    Анализировал требования к&nbsp;системе и&nbsp;особенности работы разных категорий пользователей, совместно с&nbsp;отделом аналитики, тестировщиками и&nbsp;другими рабочими группами.
+                                <p className="sportregion__research-text">
+                                    Анализировал требования и&nbsp;проводил встречи с&nbsp;заказчиком. Разбирал сценарии для двух категорий пользователей — посетители спорткомплекса и&nbsp;администраторы портала.
                                 </p>
-                                <p className="transneft__research-text">
-                                    На основе полученной информации прорабатывал пользовательские сценарии, структуру интерфейса и&nbsp;проверял решения на&nbsp;разных этапах проектирования.
+                                <p className="sportregion__research-text">
+                                    Работал в связке с&nbsp;продактом, аналитиками, разработчиками и&nbsp;тестировщиками.
                                 </p>
                             </motion.div>
                             <motion.div 
-                                className="transneft__research-summary"
+                                className="sportregion__research-summary"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
                                 transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
                             >
-                                <h3 className="transneft__research-summary-title">
+                                <h3 className="sportregion__research-summary-title">
                                     Ключевые выводы
                                 </h3>
-                                 <ul className="transneft__research-summary-list">
-                                    <li className="transneft__research-summary-item">
-                                        Интерфейс должен учитывать различия между ролями и&nbsp;доступными пользователю функциями
+                                 <ul className="sportregion__research-summary-list">
+                                    <li className="sportregion__research-summary-item">
+                                        Вход в спорткомплекс возможен только после регистрации на&nbsp;информационном портале
                                     </li>
-                                    <li className="transneft__research-summary-item">
-                                        Работа с&nbsp;документами должна быть выстроена непосредственно вокруг бизнес-процессов
+                                    <li className="sportregion__research-summary-item">
+                                        Возможность генерации QR-кода сразу при входе на&nbsp;портал — минимум действий для&nbsp;посетителя
                                     </li>
-                                    <li className="transneft__research-summary-item">
-                                        Пользователю необходимо понимать текущий статус процесса, его историю и&nbsp;дальнейшие этапы прохождения
+                                    <li className="sportregion__research-summary-item">
+                                        Расписание спорткомплекса доступно из&nbsp;навигационного меню на&nbsp;главной странице
                                     </li>
-                                    <li className="transneft__research-summary-item">
-                                        Сервис должен поддерживать последовательное обогащение необходимой информацией на&nbsp;разных этапах процесса
+                                    <li className="sportregion__research-summary-item">
+                                        Инструкции и&nbsp;техника безопасности должны быть хорошо видны и&nbsp;доступны посетителю для изучения на&nbsp;сайте
                                     </li>
-                                    <li className="transneft__research-summary-item">
-                                        Интерфейс должен обеспечивать понятное прохождение документов через все этапы — от создания и&nbsp;обработки до&nbsp;согласования и&nbsp;завершения
+                                    <li className="sportregion__research-summary-item">
+                                        Интерфейс должен одинаково работать на&nbsp;мобильном и&nbsp;десктопе
+                                    </li>
+                                    <li className="sportregion__research-summary-item">
+                                        Администратор должен обновлять контент без участия разработчиков
                                     </li>
                                 </ul>
                             </motion.div>
                         </div>
                     </div>
-                    <div className="transneft__research-images">
-                        <motion.div 
-                            className="transneft__research-content--03"
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.2, margin: "0px 0px -100px 0px" }}
-                            transition={{ duration: 0.6, ease: "linear" }}
-                        >
-                            <img src={transneftResearchImage01} alt="Исследование 1" className="transneft__research-image" />
-                            <img src={transneftResearchImage02} alt="Исследование 2" className="transneft__research-image" />
-                            <img src={transneftResearchImage03} alt="Исследование 3" className="transneft__research-image" />
-                        </motion.div>
+                    <div className="sportregion__research-images">
+                        <motion.img 
+                            src={sportRegionResearchImage} 
+                            alt="Sport Region Research Image" 
+                            className="sportregion__research-img"
+                            initial={{ scale: 0, opacity: 0 }}
+                            whileInView={{ scale: 1, opacity: 1 }}
+                            viewport={{ once: true, amount: 0.5 }}
+                            transition={{ 
+                                duration: 0.6, 
+                                ease: [0.22, 1, 0.36, 1] 
+                            }}
+                        />
                     </div>
                 </div>
             </section>
-            <section className="transneft__solution">
-                <div className="container transneft__solution-container">
-                    <div className="transneft__solution-content">
+            <section className="sportregion__solution">
+                <div className="container sportregion__solution-container">
+                    <div className="sportregion__solution-content">
                         <motion.h2 
-                            className="transneft__solution-title"
+                            className="sportregion__solution-title"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3, margin: "0px 0px -50px 0px" }}
@@ -246,33 +253,33 @@ export default function TransneftCase() {
                         >
                             Решение
                         </motion.h2>
-                        <div className="transneft__solution-wrapper">
+                        <div className="sportregion__solution-wrapper">
                             <motion.div 
-                                className="transneft__solution-desc"
+                                className="sportregion__solution-desc"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
                                 transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
                             >
-                                <p className="transneft__solution-text">
-                                    Реализован Личный кабинет контрагента как единое пространство для прохождения заявок и&nbsp;работы с&nbsp;документами на&nbsp;всех этапах бизнес-процессов — от подачи и&nbsp;согласования до&nbsp;контроля исполнения и&nbsp;завершения. 
+                                <p className="sportregion__solution-text">
+                                    Разработан информационный портал, который включает регистрацию пользователя и&nbsp;генерацию QR-кода, актуальное расписание, информацию о&nbsp;видах спорта, тренажёрах, правила безопасности и&nbsp;навигацию по&nbsp;комплексу. 
                                 </p>
-                                <p className="transneft__solution-text">
-                                    Проработаны пользовательские пути, ролевая и&nbsp;статусная модели, а&nbsp;также сценарии работы с&nbsp;более чем 100 типами документов, включая их состояния, обогащение и&nbsp;взаимодействие между участниками процесса.
+                                <p className="sportregion__solution-text">
+                                    Отдельно спроектирован административный кабинет для управления контентом площадок в&nbsp;различных локациях.
                                 </p>
                             </motion.div>
                             <motion.div 
-                                className="transneft__solution-result"
+                                className="sportregion__solution-result"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
                                 transition={{ duration: 0.6, ease: "linear", delay: 0.2 }}
                             >
-                                <h3 className="transneft__solution-result-title">
+                                <h3 className="sportregion__solution-result-title">
                                     Результат
                                 </h3>
-                                <p className="transneft__solution-result-text"> 
-                                    Спроектировал более 150 экранов и&nbsp;подготовил свыше 300 макетов, создал дизайн-систему из 100+ компонентов и&nbsp;оцифровал более 120 типов документов. Передал решения в&nbsp;разработку и&nbsp;осуществлял авторский надзор. Система успешно прошла приёмо-сдаточные испытания и&nbsp;была введена в&nbsp;эксплуатацию.
+                                <p className="sportregion__solution-result-text"> 
+                                    Реализовал дизайн-систему и&nbsp;макеты сценариев для десктопа и&nbsp;мобильной версии портала, в&nbsp;том числе все состояния и&nbsp;модальные окна. Также полностью спроектирован и&nbsp;реализован интерфейс админ-кабинета, что позволяет масштабировать решение для спорткомплексов в&nbsp;разных городах.
                                 </p>
                             </motion.div>
                         </div>
@@ -281,70 +288,75 @@ export default function TransneftCase() {
                     <InterfaceBlock
                         number="01/"
                         title="Интерфейсы"
-                        subtitle="Обзор системы"
-                        className="transneft__interface"
+                        subtitle="Информационный портал"
+                        className="sportregion__interface"
                     >
-                        <div className="transneft__interface-content">
-                            <img src={transneftInterface01TL} alt="Обзор системы" className="transneft__interface-image" />
-                            <img src={transneftInterface01TR} alt="Обзор системы" className="transneft__interface-image" />
-                            <img src={transneftInterface01BL} alt="Обзор системы" className="transneft__interface-image" />
-                            <img src={transneftInterface01BR} alt="Обзор системы" className="transneft__interface-image" />  
+                        <div className="sportregion__interface-content">
+                            <img src={sportRegionInterface01TL} alt="Обзор информационного портала" className="sportregion__interface-image" />
+                            <img src={sportRegionInterface01TR} alt="Обзор информационного портала" className="sportregion__interface-image" />
+                            <img src={sportRegionInterface01BL} alt="Обзор информационного портала" className="sportregion__interface-image" />
+                            <img src={sportRegionInterface01BR} alt="Обзор информационного портала" className="sportregion__interface-image" />  
                         </div>     
                     </InterfaceBlock>
 
                     <InterfaceBlock
                         number="02/"
                         title="Интерфейсы"
-                        subtitle="Карточка документа"
-                        className="transneft__interface"
+                        subtitle="Вход и регистрация"
+                        className="sportregion__interface"
                     >
-                        <div className="transneft__interface-content">
-                            <img src={transneftInterface02} alt="Карточка документа" className="transneft__interface-image" />
-                        </div>    
+                        <div className="sportregion__interface-content">
+                            <img src={sportRegionInterface02L} alt="Регистрация" className="sportregion__interface-image" />
+                            <img src={sportRegionInterface02R} alt="QR-код" className="sportregion__interface-image" />
+                        </div>   
                     </InterfaceBlock>
 
                     <InterfaceBlock
                         number="03/"
                         title="Интерфейсы"
-                        subtitle="Раздел “Документы”"
-                        className="transneft__interface"
+                        subtitle="Расписание занятий"
+                        className="sportregion__interface"
                     >
-                        <div className="transneft__interface-content">
-                            <img src={transneftInterface03} alt="Раздел “Документы”" className="transneft__interface-image" />
+                        <div className="sportregion__interface-content">
+                            <img src={sportRegionInterface03} alt="Расписание занятий" className="sportregion__interface-image" />
                         </div>     
                     </InterfaceBlock>
 
                     <InterfaceBlock
                         number="04/"
                         title="Интерфейсы"
-                        subtitle="Настройка вида"
-                        className="transneft__interface"
+                        subtitle="Мобильная версия"
+                        className="sportregion__interface"
                     >
-                        <div className="transneft__interface-content">
-                            <img src={transneftInterface04} alt="Настройка вида" className="transneft__interface-image" />  
+                        <div className="sportregion__interface-content">
+                            <img src={sportRegionInterface04} alt="мобильная версия" className="sportregion__interface-image" />  
                         </div>     
                     </InterfaceBlock>
 
                     <InterfaceBlock
                         number="05/"
                         title="Интерфейсы"
-                        subtitle="Фильтрация"
-                        className="transneft__interface"
+                        subtitle="Контент-менеджер"
+                        className="sportregion__interface"
                     >
-                        <div className="transneft__interface-content">
-                            <img src={transneftInterface05} alt="Фильтрация" className="transneft__interface-image" />
+                        <div className="sportregion__interface-content">
+                            <img src={sportRegionInterface05TL} alt="Обзор интерфейса контент-менеджера" className="sportregion__interface-image" />
+                            <img src={sportRegionInterface05TR} alt="Обзор интерфейса контент-менеджер" className="sportregion__interface-image" />
+                            <img src={sportRegionInterface05BL} alt="Обзор интерфейса контент-менеджер" className="sportregion__interface-image" />
+                            <img src={sportRegionInterface05BR} alt="Обзор интерфейса контент-менеджер" className="sportregion__interface-image" />  
                         </div> 
                     </InterfaceBlock>
                         
                     <InterfaceBlock
                         number="06/"
                         title="Интерфейсы"
-                        subtitle="Система отчётности"
-                        className="transneft__interface"
+                        subtitle="Администратор системы"
+                        className="sportregion__interface"
                     >
-                        <div className="transneft__interface-content">
-                            <img src={transneftInterface06L} alt="Конструктор отчётов" className="transneft__interface-image" />
-                            <img src={transneftInterface06R} alt="Отчёт" className="transneft__interface-image" />
+                        <div className="sportregion__interface-content--03">
+                            <img src={sportRegionInterface06T} alt="Обзор интерфейса администратора" className="sportregion__interface-image" />
+                            <img src={sportRegionInterface06M} alt="Обзор интерфейса администратора" className="sportregion__interface-image" />
+                            <img src={sportRegionInterface06B} alt="Обзор интерфейса администратора" className="sportregion__interface-image" />
                         </div>    
                     </InterfaceBlock>
                 </div>               

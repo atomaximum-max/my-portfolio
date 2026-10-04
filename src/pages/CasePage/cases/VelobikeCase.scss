@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     gap: 64px;
-    padding-top: 32px;
+    padding-top: 16px;
     padding-bottom: 64px;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .velobike__uppercase-text {
-    max-width: 585px;
+    max-width: 485px;
     font-family: $font-primary;
     font-size: 32px;
     line-height: 130%;
@@ -208,7 +208,7 @@
     padding: 32px;
 }
 
-.velobike__interface {
+.velobike__interface-content {
     display: flex;
     gap: $gap-md;
     justify-content: center;
@@ -358,10 +358,6 @@
 }
 
 @media (max-width: 480px) {
-    .velobike__hero-container {
-        padding-top: 16px;
-    }
-
     .velobike__title {
         font-size: 28px;
     }

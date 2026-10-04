@@ -1,10 +1,16 @@
 @use "../styles/variables" as *;
 
+.case-card-reveal {
+  grid-column: span 1;
+  min-width: 0;
+}
+
 .case-card {
+  display: block;
   grid-column: span 1;
   border-radius: 16px;
   overflow: hidden;
-  background: #212121;
+  background: $plashka;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {

@@ -67,7 +67,7 @@ export default function VelobikeCase() {
                     <div className="velobike__thumbnail">
                         <motion.img 
                             src={velobikeThumbnail} 
-                            alt="velobike Thumbnail" 
+                            alt="Velobike Thumbnail" 
                             className="velobike__thumbnail-img"
                             initial={{ scale: 0, opacity: 0 }}
                             whileInView={{ scale: 1, opacity: 1 }}

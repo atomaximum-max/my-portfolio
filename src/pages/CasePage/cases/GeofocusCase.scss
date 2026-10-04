@@ -1,7 +1,7 @@
 @use "../../../styles/variables" as *;
 
 /* Hero */
-.transneft__hero-container {
+.geofocus__hero-container {
     display: flex;
     flex-direction: column;
     gap: 64px;
@@ -9,12 +9,12 @@
     padding-bottom: 64px;
 }
 
-.transneft__top-content {
+.geofocus__top-content {
     display: flex;
     justify-content: space-between;
 }
 
-.transneft__title {
+.geofocus__title {
     max-width: 585px;
     font-family: $font-secondary;
     font-size: 46px;
@@ -22,8 +22,8 @@
     color: $white;
 }
 
-.transneft__uppercase-text {
-    max-width: 615px;
+.geofocus__uppercase-text {
+    max-width: 520px;
     font-family: $font-primary;
     font-size: 32px;
     line-height: 130%;
@@ -35,7 +35,7 @@
     }
 }
 
-.transneft__info {
+.geofocus__info {
     display: grid;
     grid-template-columns: auto auto auto auto; // все по ширине контента
     justify-content: space-between; // растягиваем по всей ширине
@@ -45,13 +45,13 @@
     border-bottom: 1px solid $border-dark;
 }
 
-.transneft__info-item {
+.geofocus__info-item {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.transneft__info-label {
+.geofocus__info-label {
     font-family: $font-primary;
     font-weight: 400;
     font-size: 16px;
@@ -59,7 +59,7 @@
     color: $gray;
 }
 
-.transneft__info-value {
+.geofocus__info-value {
     font-family: $font-primary;
     font-weight: 400;
     font-size: 18px;
@@ -67,9 +67,9 @@
     color: $white;  
 }
 
-.transneft__thumbnail,
-.transneft__problem-image, 
-.transneft__research-images {
+.geofocus__thumbnail,
+.geofocus__problem-images, 
+.geofocus__research-images {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,33 +79,35 @@
     border-radius: 16px;
 }
 
-.transneft__thumbnail-img {
-    width: 100%;          // ← занимает всю ширину родителя
-    height: auto;          // ← сохраняет пропорции
+.geofocus__thumbnail-img, 
+.geofocus__problem-img,
+.geofocus__research-img {
+    width: 100%;
+    height: auto;
     display: block;
 }
 
 /* Problem | Research | Solution */
-.transneft__problem-container,
-.transneft__research-container,
-.transneft__solution-container {
+.geofocus__problem-container,
+.geofocus__research-container,
+.geofocus__solution-container {
     display: flex;
     flex-direction: column;
     gap: 64px;
     padding-bottom: 64px;
 }
 
-.transneft__problem-content,
-.transneft__research-content,
-.transneft__solution-content {
+.geofocus__problem-content,
+.geofocus__research-content,
+.geofocus__solution-content {
     display: flex;
     justify-content: space-between;
     gap: 64px;
 }
 
-.transneft__problem-title,
-.transneft__research-title,
-.transneft__solution-title {
+.geofocus__problem-title,
+.geofocus__research-title,
+.geofocus__solution-title {
     max-width: 585px;
     font-family: $font-secondary;
     font-size: 32px;
@@ -113,45 +115,45 @@
     color: $white;
 }
 
-.transneft__problem-wrapper,
-.transneft__research-wrapper,
-.transneft__solution-wrapper {
+.geofocus__problem-wrapper,
+.geofocus__research-wrapper,
+.geofocus__solution-wrapper {
     max-width: 585px;
     display: flex;
     flex-direction: column;
     gap: 32px;
 }
 
-.transneft__problem-desc,
-.transneft__research-desc,
-.transneft__solution-desc {
+.geofocus__problem-desc,
+.geofocus__research-desc,
+.geofocus__solution-desc {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.transneft__problem-text,
-.transneft__research-text,
-.transneft__solution-text {
+.geofocus__problem-text,
+.geofocus__research-text,
+.geofocus__solution-text {
     font-family: inherit;
     font-weight: 300;
     font-size: 24px;
     line-height: 120%;
 }
 
-.transneft__problem-goals,
-.transneft__problem-role,
-.transneft__research-summary,
-.transneft__solution-result {
+.geofocus__problem-goals,
+.geofocus__problem-role,
+.geofocus__research-summary,
+.geofocus__solution-result {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.transneft__problem-goal-title,
-.transneft__problem-role-title,
-.transneft__research-summary-title,
-.transneft__solution-result-title {
+.geofocus__problem-goal-title,
+.geofocus__problem-role-title,
+.geofocus__research-summary-title,
+.geofocus__solution-result-title {
     font-family: $font-secondary;
     font-weight: 600;
     font-size: 20px;
@@ -161,10 +163,10 @@
     border-bottom: 1px solid $border-dark;
 }
 
-.transneft__problem-goal-text,
-.transneft__problem-role-text,
-.transneft__research-summary-item,
-.transneft__solution-result-text {
+.geofocus__problem-goal-text,
+.geofocus__problem-role-text,
+.geofocus__research-summary-item,
+.geofocus__solution-result-text {
     font-family: $font-primary;
     font-weight: 400;
     font-size: 16px;
@@ -172,13 +174,7 @@
     color: $white;
 }
 
-.transneft__problem-img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.transneft__research-summary-list {
+.geofocus__research-summary-list {
     list-style: disc;
     padding-left: 20px;
     display: flex;
@@ -186,43 +182,8 @@
     gap: 8px;
 }
 
-.transneft__research-content--03 {
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
-
-    .transneft__research-image {
-        width: 70%; // Все картинки крупные
-        height: auto;
-        border-radius: 8px;
-        flex-shrink: 0; // Запрещаем сжиматься
-
-        // 1-я картинка (верхняя левая)
-        &:nth-child(1) {
-            position: relative;
-            z-index: 1;
-        }
-
-        // 2-я картинка (наезжает на 1-ю, уходит вниз)
-        &:nth-child(2) {
-            margin-left: -55%; // Наезд влево
-            margin-top: 160px;  // Сдвиг вниз
-            position: relative;
-            z-index: 2;
-        }
-
-        // 3-я картинка (наезжает на 2-ю, уходит еще ниже)
-        &:nth-child(3) {
-            margin-left: -55%; // Наезд влево
-            margin-top: 320px; // Самый большой сдвиг вниз
-            position: relative;
-            z-index: 3;
-        }
-    }
-}
-
 /* Interfaces */
-.transneft__interface {
+.geofocus__interface {
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -234,14 +195,14 @@
     padding: 32px;
 }
 
-.transneft__interface-content {
+.geofocus__interface-content {
     display: flex;
     gap: $gap-md;
     justify-content: center;
     align-items: stretch;
     flex-wrap: wrap;
 
-    .transneft__interface-image {
+    .geofocus__interface-image {
        width: 100%;
        height: auto;
        object-fit: contain;
@@ -251,29 +212,29 @@
     }
 
     // 1 картинка
-    .transneft__interface-image:only-child {
+    .geofocus__interface-image:only-child {
         max-width: 100%;
     }
 
     // 2 картинки
-    .transneft__interface-image:first-child:nth-last-child(2),
-    .transneft__interface-image:first-child:nth-last-child(2) ~ .transneft__interface-image {
+    .geofocus__interface-image:first-child:nth-last-child(2),
+    .geofocus__interface-image:first-child:nth-last-child(2) ~ .geofocus__interface-image {
         max-width: calc(50% - $gap-md / 2);
     }
 
     // 4 картинки
-    .transneft__interface-image:first-child:nth-last-child(4),
-    .transneft__interface-image:first-child:nth-last-child(4) ~ .transneft__interface-image {
+    .geofocus__interface-image:first-child:nth-last-child(4),
+    .geofocus__interface-image:first-child:nth-last-child(4) ~ .geofocus__interface-image {
         max-width: calc(50% - $gap-md / 2);
     }
 }
 
-.transneft__interface-content--03 {
+.geofocus__interface-content--03 {
     display: flex;
     align-items: flex-start;
     width: 100%;
 
-    .transneft__interface-image {
+    .geofocus__interface-image {
         width: 70%; // Все картинки крупные
         height: auto;
         border-radius: 8px;
@@ -305,115 +266,97 @@
 }
 
 @media (max-width: 1024px) {
-    .transneft__hero-container, 
-    .transneft__problem-container, 
-    .transneft__research-container,
-    .transneft__solution-container {
+    .geofocus__hero-container, 
+    .geofocus__problem-container, 
+    .geofocus__research-container,
+    .geofocus__solution-container {
         gap: 32px;
     }
 
-    .transneft__top-content {
+    .geofocus__top-content {
         flex-direction: column;
         gap: 16px;
     }
 
-    .transneft__title {
+    .geofocus__title {
         font-size: 32px;
     }
 
-    .transneft__uppercase-text {
+    .geofocus__uppercase-text {
         font-size: 24px;
         max-width: 450px;
     }
 
-    .transneft__problem-content, 
-    .transneft__research-content, 
-    .transneft__solution-content {
+    .geofocus__problem-content, 
+    .geofocus__research-content, 
+    .geofocus__solution-content {
         flex-direction: column;
         gap: 16px;
     }
 
-    .transneft__problem-wrapper, 
-    .transneft__research-wrapper, 
-    .transneft__solution-wrapper {
+    .geofocus__problem-wrapper, 
+    .geofocus__research-wrapper, 
+    .geofocus__solution-wrapper {
         max-width: 100%;
     }
 
-    .transneft__problem-title, 
-    .transneft__research-title, 
-    .transneft__solution-title {
+    .geofocus__problem-title, 
+    .geofocus__research-title, 
+    .geofocus__solution-title {
         font-size: 24px;
     }
 
-    .transneft__problem-goal-title, 
-    .transneft__problem-role-title, 
-    .transneft__research-summary-title, 
-    .transneft__solution-result-title {
+    .geofocus__problem-goal-title, 
+    .geofocus__problem-role-title, 
+    .geofocus__research-summary-title, 
+    .geofocus__solution-result-title {
         font-size: 18px;
     }
 
-    .transneft__problem-text, 
-    .transneft__research-text, 
-    .transneft__solution-text {
+    .geofocus__problem-text, 
+    .geofocus__research-text, 
+    .geofocus__solution-text {
         font-size: 18px;
-    }
-
-    .transneft__research-content--03 {
-        .transneft__research-image {
-            // 2-я картинка (наезжает на 1-ю, уходит вниз)
-            &:nth-child(2) {
-                margin-top: 120px;  // Сдвиг вниз
-            }
-
-            // 3-я картинка (наезжает на 2-ю, уходит еще ниже)
-            &:nth-child(3) {
-                margin-top: 240px; // Самый большой сдвиг вниз
-            }
-        }
     }
 }
 
 @media (max-width: 768px) {
-    .transneft__uppercase-text {
+    .geofocus__uppercase-text {
         font-size: 18px;
         max-width: 350px;
     }
 
-    .transneft__info {
+    .geofocus__info {
         padding: 16px 0;
         grid-template-columns: 1fr;
         gap: 16px;
     }
 
-    .transneft__thumbnail,
-    .transneft__problem-image,
-    .transneft__research-images {
+    .geofocus__thumbnail,
+    .geofocus__problem-images,
+    .geofocus__research-images {
         padding: 16px;
     }
 
-    .transneft__interface {
+    .geofocus__interface {
         padding: 16px;
         gap: 16px;
-    }
-
-    .transneft__interface-content {
-        gap: 8px;
     }
 }
 
 @media (max-width: 480px) {
-    .transneft__title {
+    .geofocus__title {
         font-size: 28px;
     }
 
-    .transneft__problem-title, 
-    .transneft__research-title, 
-    .transneft__solution-title {
+    .geofocus__problem-title, 
+    .geofocus__research-title, 
+    .geofocus__solution-title {
         font-size: 22px;
     }
 
-    .transneft__research-content--03 {
-        .transneft__research-image {
+    .geofocus__interface-content--03 {
+        .geofocus__interface-image {
             // 2-я картинка (наезжает на 1-ю, уходит вниз)
             &:nth-child(2) {
                 margin-top: 40px;  // Сдвиг вниз
@@ -425,5 +368,4 @@
             }
         }
     }
-
 }

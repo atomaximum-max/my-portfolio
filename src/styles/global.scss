@@ -15,7 +15,7 @@ body,
     min-height: 100%;
 }
 
-html { 
+html {
     scroll-behavior: smooth; 
 }
 
@@ -106,6 +106,44 @@ section {
 .Toastify__toast {
     border: 1px solid $border-light;
     font-family: $font-primary;
+}
+
+/* ---------- Chrome / Safari / Edge ---------- */
+::-webkit-scrollbar {
+    width: 8px;      /* вертикальный */
+    height: 8px;     /* горизонтальный */
+}
+
+/* Фон дорожки (то, по чему бегает ползунок) */
+::-webkit-scrollbar-track {
+    background: $bg;
+    margin-top: 60px;
+}
+
+/* Сам ползунок */
+::-webkit-scrollbar-thumb {
+    background: $plashka;
+    border-radius: 999px;
+    border: 2px solid $bg;   // отступ между ползунком и дорожкой
+    transition: background 0.2s ease;
+}
+
+/* Ползунок при наведении */
+::-webkit-scrollbar-thumb:hover {
+    background: $gradient-primary;
+}
+
+/* Уголок пересечения вертикального и горизонтального скролла */
+::-webkit-scrollbar-corner {
+    background: $bg;
+}
+
+/* ---------- Firefox (только он) ---------- */
+@supports (-moz-appearance: none) {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.15) $bg;
+    }
 }
 
 @media (max-width: 768px) {

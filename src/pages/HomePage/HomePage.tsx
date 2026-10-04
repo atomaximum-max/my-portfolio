@@ -229,6 +229,9 @@ export default function HomePage() {
                     mobileSpeed={60}
                 >
                     <div className="about__marquee-logo">
+                        <img src={jqueryIcon} alt="Jquery logo" />
+                        <img src={nodejsIcon} alt="NodeJS logo" />
+                        <img src={gitIcon} alt="Git logo" />
                         <img src={figmaLogo} alt="Figma logo" />
                         <img src={photoshopIcon} alt="Photoshop logo" />
                         <img src={aiIcon} alt="AI logo" />
@@ -237,12 +240,9 @@ export default function HomePage() {
                         <img src={jsIcon} alt="JS logo" />
                         <img src={tsIcon} alt="TS logo" />
                         <img src={reactIcon} alt="React logo" />
-                        <img src={jqueryIcon} alt="Jquery logo" />
-                        <img src={nodejsIcon} alt="NodeJS logo" />
-                        <img src={gitIcon} alt="Git logo" />
-                        <img src={projectIcon} alt="Project logo" />
                         <img src={jiraIcon} alt="Jira logo" />
                         <img src={confluenceIcon} alt="Confluence logo" />
+                        <img src={projectIcon} alt="Project logo" />
                     </div>
                 </ScrollMarquee>
             </div>
