@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ScrollMarquee } from "../../components/ScrollMarquee";
 import Experience from "../../components/Experience";
 import { SocialBar } from "../../components/SocialBar";
@@ -7,7 +7,7 @@ import Form from "../../components/Form";
 import { Button } from "../../components/ui/Button";
 import { casesData } from "../../data/cases";
 import HeroSpline from "../../components/HeroSpline";
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 
 import avatarImage from "../../assets/img/profile.jpeg";
 import figmaLogo from '../../assets/img/figma.svg';
@@ -38,11 +38,21 @@ export default function HomePage() {
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
 
+    // Paralax
+    const heroRef = useRef(null);
+
+    const { scrollYProgress: heroProgress } = useScroll({
+        target: heroRef,
+        offset: ["start start", "end start"],
+    });
+
+    const heroY = useTransform(heroProgress, [0, 0.3, 1], [0, -250, -250]);
+
   return (
     <main>
-        <section id="hero">
+        <section id="hero" ref={heroRef}>
             <div className="container hero__container">
-                <div className="hero__wrapper">
+                <motion.div className="hero__wrapper" style={{ y: heroY }}>
                     <motion.h1 
                         className="hero__title"
                         initial={{ x: -50, opacity: 0 }}
@@ -115,9 +125,9 @@ export default function HomePage() {
                             </motion.a>
                         </motion.div>               
                     </motion.div>
-                </div>
+                </motion.div>
                 <HeroSpline />
-                <div className="hero__cta">
+                <motion.div className="hero__cta" style={{ y: heroY }}>
                     <motion.p 
                         className="hero__cta-desc"
                         initial={{ opacity: 0, x: 50 }}
@@ -146,43 +156,45 @@ export default function HomePage() {
                         >
                             Обсудить проект</Button>
                     </motion.div>
-                </div>
+                </motion.div>
             </div>
         </section>
 
         <section id="about">
             <div className="container about__container">
-                <div className="about__left">
-                    <motion.p 
-                        className="about__greeting"
+                <div className="about__row">
+                    <div className="about__left">
+                        <motion.p 
+                            className="about__greeting"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                        >
+                            Привет! меня зовут Максим, я&nbsp;UX/UI дизайнер с экспертизой в&nbsp;frontend-разработке
+                        </motion.p>
+                    </div>
+                    <motion.div 
+                        className="about__right"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        Привет! меня зовут Максим, я&nbsp;UX/UI дизайнер с экспертизой в&nbsp;frontend-разработке
-                    </motion.p>
+                        <h2 className='about__title'>О себе</h2>
+                        <div className="about__desc">
+                            <p className="about__text">
+                                Более 7 лет помогаю компаниям создавать современные цифровые продукты.
+                            </p>
+                            <p className="about__text">
+                                Свыше 15 проектов успешно реализованных и&nbsp;внедренных в процессы бизнеса и&nbsp;государственного сектора.
+                            </p>
+                            <p className="about__text">
+                                2 экспертизы позволяют осуществлять полный цикл разработки, от UX - концепции и&nbsp;дизайна до готовой frontend-реализации.
+                            </p>
+                        </div>
+                    </motion.div>
                 </div>
-                <motion.div 
-                    className="about__right"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                    <h2 className='about__title'>О себе</h2>
-                    <div className="about__desc">
-                        <p className="about__text">
-                            Более 7 лет помогаю компаниям создавать современные цифровые продукты.
-                        </p>
-                        <p className="about__text">
-                            Свыше 15 проектов успешно реализованных и&nbsp;внедренных в процессы бизнеса и&nbsp;государственного сектора.
-                        </p>
-                        <p className="about__text">
-                            2 экспертизы позволяют осуществлять полный цикл разработки, от UX - концепции и&nbsp;дизайна до готовой frontend-реализации.
-                        </p>
-                    </div>
-                </motion.div>
                 <ScrollMarquee 
                     speed={150}
                     mobileSpeed={60}
@@ -193,37 +205,39 @@ export default function HomePage() {
                 </ScrollMarquee>
                 <Experience />
                 <SocialBar className="about__social"/>
-                <div className="about__left">
-                    <motion.p 
-                        className="about__greeting"
+                <div className="about__row">
+                    <div className="about__left">
+                        <motion.p 
+                            className="about__greeting"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                        >
+                            Создаю цифровые продукты,  которые упрощают процессы и&nbsp;решают задачи бизнеса
+                        </motion.p>
+                    </div>
+                    <motion.div 
+                        className="about__right"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        Создаю цифровые продукты,  которые упрощают процессы и&nbsp;решают задачи бизнеса
-                    </motion.p>
+                        <h2 className='about__title'>Мой подход</h2>
+                        <div className="about__desc">
+                            <p className="about__text">
+                                Исследование пользовательского пути, интервьюирование, анализ бизнес-процессов, конкурентной среды и требований продукта.
+                            </p>
+                            <p className="about__text">
+                                Проектирование структуры приложения, пользовательских сценариев, компонентов и дизайн-системы.
+                            </p>
+                            <p className="about__text">
+                                Разработка интерфейсов с использованием современных фронтенд-технологий, реализация дизайна и кода, как единого процесса.
+                            </p>
+                        </div>
+                    </motion.div>
                 </div>
-                <motion.div 
-                    className="about__right"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.1, margin: "0px 0px -150px 0px" }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                    <h2 className='about__title'>Мой подход</h2>
-                    <div className="about__desc">
-                        <p className="about__text">
-                            Исследование пользовательского пути, интервьюирование, анализ бизнес-процессов, конкурентной среды и требований продукта.
-                        </p>
-                        <p className="about__text">
-                            Проектирование структуры приложения, пользовательских сценариев, компонентов и дизайн-системы.
-                        </p>
-                        <p className="about__text">
-                            Разработка интерфейсов с использованием современных фронтенд-технологий, реализация дизайна и кода, как единого процесса.
-                        </p>
-                    </div>
-                </motion.div>
                 <ScrollMarquee 
                     speed={100}
                     mobileSpeed={60}
