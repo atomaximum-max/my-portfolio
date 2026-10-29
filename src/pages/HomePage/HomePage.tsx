@@ -24,7 +24,7 @@ import gitIcon from "../../assets/img/git.svg";
 import projectIcon from "../../assets/img/project.svg";
 import jiraIcon from "../../assets/img/jira.svg";
 import confluenceIcon from "../../assets/img/confluence.svg";
-import resumePdf from "../../assets/doc/CV - Барманов Максим Игоревич.pdf";
+import resumePdf from "../../assets/doc/CV - Барманов Максим.pdf";
 
 import "./HomePage.scss";
 
