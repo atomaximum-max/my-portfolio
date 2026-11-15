@@ -62,14 +62,14 @@ export default function Header() {
         {/* Навигация */}
         <nav className="header__nav">
           <div className="header__links">
-            <button className="header__nav-link" onClick={() => navigateTo('about')}>
-              О себе
+            <button className="header__nav-link CCGlitch" onClick={() => navigateTo('about')}>
+              <span className="CCGlitch-text" data-text="О себе">О себе</span>
             </button>
-            <button className="header__nav-link" onClick={() => navigateTo('cases')}>
-              Кейсы
+            <button className="header__nav-link CCGlitch" onClick={() => navigateTo('cases')}>
+              <span className="CCGlitch-text" data-text="Кейсы">Кейсы</span>
             </button>
-            <button className="header__nav-link" onClick={() => navigateTo('footer')}>
-              Контакты
+            <button className="header__nav-link CCGlitch" onClick={() => navigateTo('footer')}>
+              <span className="CCGlitch-text" data-text="Контакты">Контакты</span>
             </button>
           </div>
 
